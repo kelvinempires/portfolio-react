@@ -14,7 +14,7 @@ const Footer = () => {
   });
 
   return (
-    <footer className="bg-gray-800 text-white py-4">
+    <footer className="flex items-center justify-center text-white py-4">
       <div className="container mx-auto flex justify-between items-center px-6 md:px-12">
         <span className="text-lg font-semibold">
           © {currentYear} Kelvin Empire. All rights reserved.
@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="flex space-x-4 text-sm text-gray-400">
           <span>Date: {currentDate}</span>
           <span>Time: {currentTime}</span>
-          <span>Crafted with passion.</span>
+          <span>Crafted by kelvin Ewurum</span>
         </div>
       </div>
     </footer>

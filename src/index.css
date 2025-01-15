@@ -13,14 +13,14 @@
 }
 
 body {
-  background: rgb(30, 30, 30);
+  background: rgb(10, 25, 47);
   color: white;
   overflow: hidden;
   overflow-y: scroll;
   font-family: 'Poppins', sans-serif;
 }
 nav{
-    background: rgb(30, 30, 30);
+    background: rgb(10, 25, 47);
 }
 
 /* Custom CSS for a custom shadow color */
