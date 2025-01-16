@@ -144,16 +144,7 @@ const Contact = () => {
               className="text-blue-400 text-2xl"
             />
           </a>
-          <a
-            href="https://www.linkedin.com/in/kelvinEwurum"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="text-blue-700 text-2xl"
-            />
-          </a>
+         
           <a
             href="https://www.facebook.com/chibuike.kelvin"
             target="_blank"
@@ -300,3 +291,13 @@ const Contact = () => {
 };
 
 export default Contact;
+ <a
+            href="https://www.linkedin.com/in/kelvinEwurum"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="text-blue-700 text-2xl"
+            />
+          </a>

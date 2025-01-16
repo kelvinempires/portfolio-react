@@ -3,7 +3,10 @@ import fly from "../assets/aboutImg.jpg";
 const About = () => {
   return (
     <section>
-      <div id="about" className="flex items-center p-10 md:p-20 mt-16">
+      <div
+        id="about"
+        className="flex items-center p-10 md:p-20 mt-16 py-12 px-8 md:px-24"
+      >
         <img
           src={fly}
           alt="tech display"

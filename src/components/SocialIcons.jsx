@@ -11,7 +11,7 @@ import {
 
 const SocialIcons = () => {
   return (
-    <div className="md:space-y-6 space-y-4 pl-2 border-r-[0.01px]">
+    <div className="md:space-y-6 space-y-4 pl-2 border-r-[0.01px] sticky left-0">
       <div>
         <a
           href="mailto:kelvinewurum@gmail.com"

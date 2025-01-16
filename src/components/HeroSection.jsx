@@ -1,31 +1,33 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import heroPics1 from "../assets/kelvin.png";
-import SocialIcons from "./SocialIcons";
+// import SocialIcons from "./SocialIcons";
 
 const HeroSection = () => {
  
   return (
     <section className="flex">
-      <SocialIcons />
+      {/* <SocialIcons /> */}
       <div
         id="home"
-        className="md:pr-0 md:mt-16 mt-2 h-[calc(100vh-5rem)] w-full max-w-7xl mx-auto overflow-hidden relative px-4 md:px-16 py-4 md:py-8"
+        className=" md:mt-24 mt-16 h-[calc(100vh-5rem)] w-full max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24"
       >
         <div className="relative z-10">
           <span className="text-3xl font-semibold block md:inline">Hello,</span>
           <br className="block md:hidden" />
-          <span className="text-5xl font-bold mt-4 block">
-            {"I'm "}
-            <span className="text-indigo-600 block md:inline">Kelvin</span>
+          <span className="text-5xl font-bold mt-4 block ">
+            <span className="text-customColor"> {"I'm "}</span>
+            <span className="block md:inline">Kelvin Ewurum</span>
             <br />
-            A Full Stack Web Developer.
+            <span className="text-customColor">
+              A Full Stack Web Developer.
+            </span>
           </span>
 
-          <p className="mt-6 text-xl max-w-2xl hidden md:block">
-          Welcome to {"Kelvin's"} Web Development Portfolio, Discover my projects,
-            skills, and experience in web development, design, and software
-            engineering.
+          <p className="mt-6 text-xl bg- max-w-2xl hidden md:block text-colorP">
+            Welcome to {"Kelvin's"} Web Development Portfolio, Discover my
+            projects, skills, and experience in web development, design, and
+            software engineering.
           </p>
           <button
             onClick={() => {

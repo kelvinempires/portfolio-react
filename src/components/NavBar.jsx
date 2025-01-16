@@ -1,23 +1,38 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-
 import logo from "../assets/rmv1.png";
 import { Link } from "react-scroll";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isVisible = prevScrollPos > currentScrollPos;
+
+      setVisible(isVisible);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
   return (
-    <nav className=" h-16 max-w-75rem flex items-center justify-between py-3 px-6 md:px-16 sticky top-0 z-30">
-      <img
-        className="object-cover h-16 w-20 md:h-24 md:w-28"
-        src={logo}
-        alt="k logo image"
-      />
+    <nav
+      className={`nav h-20 flex items-center justify-between px-6 md:px-16 bg-white shadow-md fixed w-full z-30 transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <img className="h-16 w-20 md:h-24 md:w-28" src={logo} alt="logo" />
 
-      <div className="hidden md:flex space-x-6">
+      <div className="hidden md:flex space-x-8">
         <Link
           activeClass="active"
           to="home"
@@ -25,7 +40,7 @@ const NavBar = () => {
           offset={-100}
           smooth={true}
           duration={500}
-          className="m-2 md:m-6 cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
+          className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
         >
           Home
         </Link>
@@ -36,7 +51,7 @@ const NavBar = () => {
           offset={-50}
           smooth={true}
           duration={500}
-          className="m-2 md:m-6 cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
+          className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
         >
           About
         </Link>
@@ -47,7 +62,7 @@ const NavBar = () => {
           offset={-10}
           smooth={true}
           duration={500}
-          className="m-2 md:m-6 cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
+          className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
         >
           Portfolio
         </Link>
@@ -59,44 +74,28 @@ const NavBar = () => {
             .getElementById("contact")
             .scrollIntoView({ behavior: "smooth" });
         }}
-        className="hidden md:flex py-1 px-4 border rounded-full text-black items-center space-x-2 transition-all duration-300 ease-in-out"
-        style={{
-          background:
-            "linear-gradient(360deg, rgb(169, 50, 210), rgb(110, 50, 207), rgb(57, 50, 187))",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.background =
-            "linear-gradient(360deg, rgb(57, 50, 187), rgb(110, 50, 207), rgb(169, 50, 210))";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.background =
-            "linear-gradient(360deg, rgb(169, 50, 210), rgb(110, 50, 207), rgb(57, 50, 187))";
-        }}
+        className="hidden md:flex relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
       >
-        <a href="#_" className="relative inline-block text-lg group">
-          <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-full group-hover:text-white">
-            <span className="absolute inset-0 w-full h-full px-4 py-2 rounded-full bg-gray-50"></span>
-            <span className="absolute left-0 w-24 h-24 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-            <span className="relative">
-              <FontAwesomeIcon icon={faPhone} />
-            </span>
-            <span className="relative">Contact Me</span>
-          </span>
-          <span
-            className="absolute bottom-0 right-0 w-full h-8 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-full group-hover:mb-0 group-hover:mr-0"
-            data-rounded="rounded-full"
-          ></span>
-        </a>
+        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
+        <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-green-400" />
+        </span>
+        <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-green-400" />
+        </span>
+        <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
+          Contact Me
+        </span>
       </button>
 
       <FontAwesomeIcon
         icon={faBars}
-        className="text-violet-600 text-3xl cursor-pointer md:hidden ml-auto"
+        className="text-indigo-600 text-3xl cursor-pointer md:hidden"
         onClick={() => setShow(!show)}
       />
 
       {show && (
-        <div className="absolute top-16 right-0 w-52  rounded-2xl shadow-lg md:hidden flex flex-col space-y-6 p-6 z-20">
+        <div className="absolute top-20 right-0 w-48 bg-white shadow-md rounded-xl md:hidden flex flex-col space-y-4 p-6 z-20">
           <Link
             activeClass="active"
             to="home"
@@ -104,7 +103,7 @@ const NavBar = () => {
             offset={-100}
             smooth={true}
             duration={500}
-            className="cursor-pointer hover:text-purple-500 pb-1 pl-5 rounded-xl bg-gray-800 border-b-2 border-transparent hover:border-b-purple-950"
+            className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
             onClick={() => setShow(false)}
           >
             Home
@@ -113,10 +112,10 @@ const NavBar = () => {
             activeClass="active"
             to="about"
             spy={true}
-            offset={-60}
+            offset={-50}
             smooth={true}
             duration={500}
-            className="cursor-pointer hover:text-purple-500 pb-1 pl-5 rounded-xl bg-gray-800 border-b-2 border-transparent hover:border-b-purple-950"
+            className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
             onClick={() => setShow(false)}
           >
             About
@@ -125,10 +124,10 @@ const NavBar = () => {
             activeClass="active"
             to="portfolio"
             spy={true}
-            offset={-20}
+            offset={-10}
             smooth={true}
             duration={500}
-            className="cursor-pointer hover:text-purple-500 pb-1 pl-5 rounded-xl bg-gray-800 border-b-2 border-transparent hover:border-b-purple-950"
+            className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
             onClick={() => setShow(false)}
           >
             Portfolio
@@ -140,7 +139,7 @@ const NavBar = () => {
             offset={-30}
             smooth={true}
             duration={500}
-            className="cursor-pointer hover:text-purple-500 pb-1 pl-5 rounded-xl bg-gray-800 border-b-2 border-transparent hover:border-b-purple-950"
+            className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
             onClick={() => setShow(false)}
           >
             Contact

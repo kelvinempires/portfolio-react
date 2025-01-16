@@ -17,10 +17,15 @@ body {
   color: white;
   overflow: hidden;
   overflow-y: scroll;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins",monospace, sans-serif;
 }
-nav{
-    background: rgb(10, 25, 47);
+p {
+  color: rgb(136, 146, 176);
+}
+
+.nav {
+  background: rgb(10, 25, 47);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Custom CSS for a custom shadow color */
@@ -42,7 +47,7 @@ nav{
   background-clip: text;
   text-fill-color: transparent;
 }
-.active{
+.active {
   color: rgb(128, 43, 226);
   border-bottom: 0.5rch;
   border-bottom: 3px solid rgba(111, 0, 128, 0.498);
@@ -74,8 +79,6 @@ nav{
     transform: translateX(-100%);
   }
 }
-
-
 
 .slider-wrapper {
   position: relative;
@@ -205,4 +208,3 @@ nav{
     color: rgba(0, 0, 0, 0.155);
   }
 }
-
