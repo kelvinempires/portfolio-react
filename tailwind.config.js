@@ -8,7 +8,19 @@ export default {
         colorP: "rgb(136, 146, 176)",
         customGreen: "rgb(95, 241, 207)",
       },
+      backgroundImage: {
+        "custom-gradient-text":
+          "linear-gradient(45deg, rgb(169, 50, 210), rgb(110, 50, 207), rgb(57, 50, 187))",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".bg-clip-text": { backgroundClip: "text" },
+        ".text-transparent": { color: "transparent" },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };

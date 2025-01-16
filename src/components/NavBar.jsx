@@ -65,7 +65,7 @@ const NavBar = () => {
           offset={-10}
           smooth={true}
           duration={500}
-          className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
+          className="text-lg cursor-pointer hover:text-violet-900 transition-all relative pb-1"
         >
           Portfolio
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
@@ -78,14 +78,14 @@ const NavBar = () => {
             .getElementById("contact")
             .scrollIntoView({ behavior: "smooth" });
         }}
-        className="hidden md:flex relative  items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
+        className="hidden md:flex relative  items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-fuchsia-900 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-zinc-300 group"
       >
-        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
+        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-custom-gradient-text group-hover:h-full"></span>
         <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-green-400" />
+          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-purple-900" />
         </span>
         <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-green-400" />
+          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-zinc-400" />
         </span>
         <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
           Contact Me

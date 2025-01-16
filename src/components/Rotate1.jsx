@@ -5,7 +5,7 @@ const Rotate = () => {
         href="mailto:kelvinewurum@gmail.com"
         className="flex items-center leading-8 tracking-wide"
       >
-        <p className="font-mono text-[0.9rem] leading-8 tracking-widest hover:text-green-800 transition-colors">
+        <p className="font-mono text-[0.9rem] leading-8 tracking-widest hover:text-violet-800 transition-colors">
           kelvinewurum@gmail.com
         </p>
       </a>

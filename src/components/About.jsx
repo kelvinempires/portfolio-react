@@ -13,9 +13,11 @@ const About = () => {
           className="w-1/2 h-auto hidden lg:block custom-shadow-indigo"
         />
         <div className="text-center md:text-left pl-10 w-full h-auto custom-shadow-indigo transition duration-200 ease-in-out">
-          <p className="custom-gradient-text text-4xl font-bold">
-            Software Developer
+
+          <p className="custom-gradient-text text-3xl font-bold">
+            About Me
           </p>
+          
           <abbr title="About Me">
             With over five years of experience in the tech industry, I have
             developed a diverse skill set that includes HTML, CSS, TailwindCSS,

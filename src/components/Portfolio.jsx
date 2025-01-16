@@ -275,7 +275,7 @@ const Portfolio = () => {
   return (
     <main id="portfolio" className="p-4 sm:p-6 md:p-1 lg:p-1">
       <div className="border-b-2">
-        <h1 className="flex justify-center font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 md:pb-10 lg:pb-10  font-bold">
+        <h1 className="text-zinc-400 flex justify-center font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 md:pb-10 lg:pb-10  font-bold">
           Discover + 20 projects that I made with ❤️
         </h1>
       </div>
