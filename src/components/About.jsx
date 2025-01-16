@@ -5,12 +5,12 @@ const About = () => {
     <section>
       <div
         id="about"
-        className="flex items-center p-10 md:p-20  py-12 px-8 md:px-24"
+        className="flex   items-center p-10 md:p-20  py-12 px-8 md:px-24"
       >
         <img
           src={fly}
           alt="tech display"
-          className="w-1/2 h-auto custom-shadow-indigo"
+          className="w-1/2 h-auto hidden lg:block custom-shadow-indigo"
         />
         <div className="text-center md:text-left pl-10 w-full h-auto custom-shadow-indigo transition duration-200 ease-in-out">
           <p className="custom-gradient-text text-4xl font-bold">

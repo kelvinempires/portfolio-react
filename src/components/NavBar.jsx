@@ -40,7 +40,7 @@ const NavBar = () => {
           offset={-100}
           smooth={true}
           duration={500}
-          className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
+          className="text-lg cursor-pointer hover:"
         >
           Home
         </Link>
