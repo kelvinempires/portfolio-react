@@ -50,7 +50,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="section-p1 flex flex-col md:flex-row items-center justify-between py-12 px-8 md:px-24"
+      className="section-p1 flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-24"
     >
       <div className="details w-full md:w-1/2 mb-12 md:mb-0">
         <h2 className="text-4xl font-bold mb-4 custom-gradient-text mt-6">
@@ -144,7 +144,16 @@ const Contact = () => {
               className="text-blue-400 text-2xl"
             />
           </a>
-         
+          <a
+            href="https://www.linkedin.com/in/kelvinEwurum"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="text-blue-700 text-2xl"
+            />
+          </a>
           <a
             href="https://www.facebook.com/chibuike.kelvin"
             target="_blank"
@@ -214,66 +223,7 @@ const Contact = () => {
             </a>
           </li>
         </ul>
-        {/* <div className="social-icons flex space-x-4 mt-8">
-          <a
-            href="https://twitter.com/kelvinEwurum"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className="text-blue-400 text-2xl"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/kelvinEwurum"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="text-blue-700 text-2xl"
-            />
-          </a>
-          <a
-            href="https://www.facebook.com/chibuike.kelvin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faFacebook}
-              className="text-blue-600 text-2xl"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/kelvin_empires"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faInstagram}
-              className="text-pink-600 text-2xl"
-            />
-          </a>
-          <a
-            href="https://wa.me/2349153421622"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center"
-          >
-            <FontAwesomeIcon
-              icon={faWhatsapp}
-              className="text-green-500 text-2xl"
-            />
-          </a>
-          <a
-            href="https://github.com/kelvinempires?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} className="text-black text-2xl" />
-          </a>
-        </div> */}
+      
       </div>
       <div className="map w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg">
         <iframe
@@ -291,13 +241,3 @@ const Contact = () => {
 };
 
 export default Contact;
- <a
-            href="https://www.linkedin.com/in/kelvinEwurum"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="text-blue-700 text-2xl"
-            />
-          </a>
