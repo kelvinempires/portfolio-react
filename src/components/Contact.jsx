@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import emailjs from "@emailjs/browser";
 import {
-  faLocationDot,
-  faEnvelope,
-  faPhone,
+  // faLocationDot,
+  // faEnvelope,
+  // faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faWhatsapp,
