@@ -14,7 +14,7 @@ const About = () => {
         />
         <div className="text-center md:text-left pl-10 w-full h-auto custom-shadow-indigo transition duration-200 ease-in-out">
 
-          <p className="custom-gradient-text text-3xl font-bold">
+          <p className="text-zinc-400 text-3xl font-bold">
             About Me
           </p>
           

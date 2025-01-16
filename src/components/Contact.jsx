@@ -138,6 +138,7 @@ const Contact = () => {
             href="https://twitter.com/kelvinEwurum"
             target="_blank"
             rel="noopener noreferrer"
+            className="transition-transform transform hover:scale-110"
           >
             <FontAwesomeIcon
               icon={faTwitter}
@@ -148,6 +149,7 @@ const Contact = () => {
             href="https://www.linkedin.com/in/kelvinEwurum"
             target="_blank"
             rel="noopener noreferrer"
+            className="transition-transform transform hover:scale-110"
           >
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -158,6 +160,7 @@ const Contact = () => {
             href="https://www.facebook.com/chibuike.kelvin"
             target="_blank"
             rel="noopener noreferrer"
+            className="transition-transform transform hover:scale-110"
           >
             <FontAwesomeIcon
               icon={faFacebook}
@@ -168,6 +171,7 @@ const Contact = () => {
             href="https://www.instagram.com/kelvin_empires"
             target="_blank"
             rel="noopener noreferrer"
+            className="transition-transform transform hover:scale-110"
           >
             <FontAwesomeIcon
               icon={faInstagram}
@@ -178,7 +182,7 @@ const Contact = () => {
             href="https://wa.me/2349153421622"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center"
+            className="transition-transform transform hover:scale-110"
           >
             <FontAwesomeIcon
               icon={faWhatsapp}
@@ -189,19 +193,20 @@ const Contact = () => {
             href="https://github.com/kelvinempires?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
+            className="transition-transform transform hover:scale-110"
           >
             <FontAwesomeIcon icon={faGithub} className="text-black text-2xl" />
           </a>
         </div>
-        <ul className="space-y-4">
+        {/* <ul className="space-y-4">
           <li className="flex items-center">
             <FontAwesomeIcon
               icon={faLocationDot}
               className="text-red-600 text-2xl mr-4"
             />
             <p className="text-lg">19 Allen Avenue,Ikeja, Lagos, Nigeria</p>
-          </li>
-          <li className="flex items-center">
+          </li> */}
+        {/* <li className="flex items-center">
             <a
               href="mailto:kelvinewurum@gmail.com"
               className="flex items-center"
@@ -212,8 +217,8 @@ const Contact = () => {
               />
               <p className="text-lg">kelvinewurum@gmail.com</p>
             </a>
-          </li>
-          <li className="flex items-center">
+          </li> */}
+        {/* <li className="flex items-center">
             <a href="tel:+2349153421622" className="flex items-center">
               <FontAwesomeIcon
                 icon={faPhone}
@@ -221,9 +226,8 @@ const Contact = () => {
               />
               <p className="text-lg">09153421622</p>
             </a>
-          </li>
-        </ul>
-      
+          </li> */}
+        {/* </ul> */}
       </div>
       <div className="map w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg">
         <iframe
