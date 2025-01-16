@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* <SocialIcons /> */}
       <div
         id="home"
-        className="  md:mt-24 mt-16 h-[calc(100vh-5rem)] w-full max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-16  lg:py-12"
+        className="  md:mt-24 mt-16 h-[calc(100dvh-5rem)] w-full max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-16  lg:py-12"
       >
         <div className="relative z-10">
           <span className="text-3xl font-semibold block md:inline">Hello,</span>

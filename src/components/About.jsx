@@ -28,9 +28,9 @@ const About = () => {
             <strong>Bachelor of Science in Computer Science:</strong> National
             Open University of Nigeria, Victoria Island, Lagos.
             <br />
-            <strong>Bootcamp Certificate in Software Development:</strong>{" "}
+            <strong>Bootcamp Certificate in Software Development:</strong>
             Gomycode, Ikeja, Lagos, Nigeria. Certification along side this
-            program includes <strong>Postman Certification</strong> and{" "}
+            program includes <strong>Postman Certification</strong> and
             <strong>Mongodb certification</strong>
             <br />
             <br />

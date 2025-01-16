@@ -40,10 +40,12 @@ const NavBar = () => {
           offset={-100}
           smooth={true}
           duration={500}
-          className="text-lg cursor-pointer hover:"
+          className="text-lg cursor-pointer hover:text-violet-900 transition-all relative pb-1"
         >
           Home
+          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
+
         <Link
           activeClass="active"
           to="about"
@@ -51,9 +53,10 @@ const NavBar = () => {
           offset={-50}
           smooth={true}
           duration={500}
-          className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
+          className="text-lg cursor-pointer hover:text-violet-900 transition-all relative pb-1"
         >
           About
+          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
         <Link
           activeClass="active"
@@ -65,6 +68,7 @@ const NavBar = () => {
           className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
         >
           Portfolio
+          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
       </div>
 
@@ -74,7 +78,7 @@ const NavBar = () => {
             .getElementById("contact")
             .scrollIntoView({ behavior: "smooth" });
         }}
-        className="hidden md:flex relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
+        className="hidden md:flex relative  items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
       >
         <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
         <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
