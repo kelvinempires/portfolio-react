@@ -13,14 +13,18 @@ const HeroSection = () => {
         className="h-screen  md:mt-24 mt-16 w-full max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-16  lg:py-12"
       >
         <div className="relative z-10">
-          <span className="text-3xl font-semibold block md:inline">Hello,</span>
+          <span className="text-2xl sm:text-sm font-semibold block md:inline">
+            Hello,
+          </span>
           <br className="block md:hidden" />
           <span className="text-5xl font-bold mt-4 block ">
-            <span className="text-customColor"> {"I'm "}</span>
+            <span className="text-customColor text-4xl sm:text-5xl">
+              {"I'm "}
+            </span>
             <span className="block md:inline">Kelvin Ewurum</span>
             <br />
-            <span className="text-customColor">
-              A Full Stack Web Developer.
+            <span className="text-customColor text-4xl sm:text-5xl">
+              Full Stack Web Developer.
             </span>
           </span>
 
