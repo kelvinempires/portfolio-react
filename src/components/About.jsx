@@ -4,10 +4,10 @@ import MyList from "./MyList";
 
 const About = () => {
   return (
-    <section className="py-12 px-8 md:px-24">
+    <section className=" overflow-hidden relative md:py-8 px-8 sm:px-16 md:px-24">
       <div
         id="about"
-        className="flex flex-col lg:flex-row h-auto items-center p-10 md:p-20 space-y-8 lg:space-y-0 lg:space-x-8"
+        className="flex flex-col lg:flex-row h-auto items-center md:py-20 space-y-8 lg:space-y-0 lg:space-x-8"
       >
         <div className="flex-1 w-full lg:w-1/2 h-auto relative group">
           <div className="absolute inset-0 border-4 border-zinc-400 rounded-lg transition-all duration-700 ease-in-out transform translate-x-3 translate-y-3 group-hover:translate-x-6 group-hover:translate-y-6"></div>
