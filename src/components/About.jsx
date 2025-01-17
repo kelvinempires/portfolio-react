@@ -1,59 +1,29 @@
 import fly from "../assets/aboutImg.jpg";
+import flyHover from "../assets/aboutImgHover.jpg"; // Import the second image
+import MyList from "./MyList";
 
 const About = () => {
   return (
-    <section>
+    <section className="py-12 px-8 md:px-24">
       <div
         id="about"
-        className="flex   items-center p-10 md:p-20  py-12 px-8 md:px-24"
+        className="flex flex-col lg:flex-row h-auto items-center p-10 md:p-20 space-y-8 lg:space-y-0 lg:space-x-8"
       >
-        <img
-          src={fly}
-          alt="tech display"
-          className="w-1/2 h-auto hidden lg:block custom-shadow-indigo"
-        />
-        <div className="text-center md:text-left pl-10 w-full h-auto custom-shadow-indigo transition duration-200 ease-in-out">
-
-          <p className="text-zinc-400 text-3xl font-bold">
-            About Me
-          </p>
-          
-          <abbr title="About Me">
-            With over five years of experience in the tech industry, I have
-            developed a diverse skill set that includes HTML, CSS, TailwindCSS,
-            JavaScript, TypeScript, React, Node.js, Express, Next.js, Appwrite,
-            Dwolla, Plaid, MongoDB, and more.
-            <br />
-            <br />
-            <strong>Educational Background:</strong>
-            <br />
-            <strong>Bachelor of Science in Computer Science:</strong> National
-            Open University of Nigeria, Victoria Island, Lagos.
-            <br />
-            <strong>Bootcamp Certificate in Software Development:</strong>
-            Gomycode, Ikeja, Lagos, Nigeria. Certification along side this
-            program includes <strong>Postman Certification</strong> and
-            <strong>Mongodb certification</strong>
-            <br />
-            <br />
-          </abbr>
-
-          <div className="relative overflow-hidden whitespace-nowrap bg-gray-200 py-2 marquee-container">
-            <div className="animate-marquee inline-block">
-              <div className="marquee-container">
-                <div className="marquee-text">
-                  My journey in web development began with a deep curiosity for
-                  how things work, and it has evolved into a career where I
-                  continuously strive to learn and adapt to new challenges. I
-                  thrive in collaborative environments and enjoy solving complex
-                  problems to deliver high-quality solutions. Outside of coding,
-                  I enjoy staying active, exploring new technologies, and
-                  contributing to open source projects. Join me on this exciting
-                  journey of innovation and excellence in web development.
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="flex-1 w-full lg:w-1/2 h-auto relative group">
+          <div className="absolute inset-0 border-4 border-zinc-400 rounded-lg transition-all duration-700 ease-in-out transform translate-x-3 translate-y-3 group-hover:translate-x-6 group-hover:translate-y-6"></div>
+          <img
+            src={fly}
+            alt="tech display"
+            className="w-full h-full object-cover rounded-lg relative z-10 transition-transform duration-700 ease-in-out transform translate-y-[-10px] group-hover:translate-y-[-20px] opacity-100 group-hover:opacity-0"
+          />
+          <img
+            src={flyHover}
+            alt="tech display hover"
+            className="w-full h-full object-cover rounded-lg absolute top-0 left-0 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+          />
+        </div>
+        <div className="flex-1 w-full lg:w-1/2 h-auto">
+          <MyList />
         </div>
       </div>
     </section>

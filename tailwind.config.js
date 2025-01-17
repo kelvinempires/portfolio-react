@@ -7,6 +7,10 @@ export default {
         customColor: "rgb(136, 146, 176)",
         colorP: "rgb(136, 146, 176)",
         customGreen: "rgb(95, 241, 207)",
+        customBlue: "rgb(10, 25, 47)",
+      },
+      fontSize: {
+        xxs: "0.625rem", // 10px
       },
       backgroundImage: {
         "custom-gradient-text":

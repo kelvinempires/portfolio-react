@@ -50,7 +50,7 @@ const NavBar = () => {
           activeClass="active"
           to="about"
           spy={true}
-          offset={-50}
+          offset={45}
           smooth={true}
           duration={500}
           className="text-lg cursor-pointer hover:text-violet-900 transition-all relative pb-1"
@@ -94,12 +94,12 @@ const NavBar = () => {
 
       <FontAwesomeIcon
         icon={faBars}
-        className="text-indigo-600 text-3xl cursor-pointer md:hidden"
+        className="text-purple-900 text-3xl cursor-pointer md:hidden"
         onClick={() => setShow(!show)}
       />
 
       {show && (
-        <div className="absolute top-20 right-0 w-48 bg-white shadow-md rounded-xl md:hidden flex flex-col space-y-4 p-6 z-20">
+        <div className="absolute top-20 right-0 w-48 bg-customBlue shadow-md rounded-xl md:hidden flex flex-col space-y-4 p-6 z-20">
           <Link
             activeClass="active"
             to="home"
@@ -107,7 +107,7 @@ const NavBar = () => {
             offset={-100}
             smooth={true}
             duration={500}
-            className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
+            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
             onClick={() => setShow(false)}
           >
             Home
@@ -119,7 +119,7 @@ const NavBar = () => {
             offset={-50}
             smooth={true}
             duration={500}
-            className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
+            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
             onClick={() => setShow(false)}
           >
             About
@@ -131,7 +131,7 @@ const NavBar = () => {
             offset={-10}
             smooth={true}
             duration={500}
-            className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
+            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
             onClick={() => setShow(false)}
           >
             Portfolio
@@ -143,7 +143,7 @@ const NavBar = () => {
             offset={-30}
             smooth={true}
             duration={500}
-            className="text-lg cursor-pointer hover:text-indigo-600 transition-colors"
+            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
             onClick={() => setShow(false)}
           >
             Contact
