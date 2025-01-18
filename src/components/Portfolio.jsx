@@ -273,7 +273,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <main id="portfolio" className="p-4 sm:p-6 md:p-8 lg:p-8">
+    <main id="portfolio" className="p-4 sm:p-6 md:p-0 lg:p-0">
       <div className="border-b-2">
         <h1 className="text-zinc-400 flex justify-center font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 md:pb-10 lg:pb-10  font-bold">
           Discover + 20 projects that I made with ❤️
@@ -298,7 +298,7 @@ const Portfolio = () => {
           FRONTEND/BACKEND
         </p>
       </div> */}
-      <div className="container mt-6 sm:mt-8 md:mt-10 lg:mt-12  ">
+      <div className="container mt-6 sm:mt-8 md:mt-12 lg:mt-14  px-0 sm:px-0 md:px-18 lg:px-20">
         <div className="slider-wrapper relative">
           <button
             id="prev-slide"
@@ -378,7 +378,7 @@ const Portfolio = () => {
             <FontAwesomeIcon icon={faAngleRight} />
           </button>
         </div>
-        <div className="slider-scrollbar mt-10">
+        <div className="slider-scrollbar mt-0">
           <div className="scrollbar-track bg-gray-300 rounded-full">
             <div className="scrollbar-thumb bg-black rounded-full"></div>
           </div>

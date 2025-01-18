@@ -62,7 +62,7 @@ const NavBar = () => {
           activeClass="active"
           to="portfolio"
           spy={true}
-          offset={-10}
+          offset={-40}
           smooth={true}
           duration={500}
           className="text-lg cursor-pointer hover:text-violet-900 transition-all relative pb-1"
