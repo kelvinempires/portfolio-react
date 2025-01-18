@@ -273,13 +273,13 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <main id="portfolio" className="p-4 sm:p-6 md:p-1 lg:p-1">
+    <main id="portfolio" className="p-4 sm:p-6 md:p-8 lg:p-8">
       <div className="border-b-2">
         <h1 className="text-zinc-400 flex justify-center font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 md:pb-10 lg:pb-10  font-bold">
           Discover + 20 projects that I made with ❤️
         </h1>
       </div>
-      <div className="flex flex-col text-center sm:flex-row md:gap-10 justify-center pt-4 sm:pt-6 md:pt-6 lg:pt-6 font-bold">
+      {/* <div className="flex flex-col text-center sm:flex-row md:gap-10 justify-center pt-4 sm:pt-6 md:pt-6 lg:pt-6 font-bold">
         <p className="hover:bg-black transition duration-300 text-white px-4 py-2 text-xs sm:text-sm md:text-base lg:text-lg">
           ALL PROJECTS
         </p>
@@ -297,8 +297,8 @@ const Portfolio = () => {
         <p className="hover:bg-black transition duration-300 text-custom-gradient px-4 py-2 text-xs sm:text-sm md:text-base lg:text-lg">
           FRONTEND/BACKEND
         </p>
-      </div>
-      <div className="container mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+      </div> */}
+      <div className="container mt-6 sm:mt-8 md:mt-10 lg:mt-12  ">
         <div className="slider-wrapper relative">
           <button
             id="prev-slide"
@@ -378,7 +378,7 @@ const Portfolio = () => {
             <FontAwesomeIcon icon={faAngleRight} />
           </button>
         </div>
-        <div className="slider-scrollbar mt-4">
+        <div className="slider-scrollbar mt-10">
           <div className="scrollbar-track bg-gray-300 rounded-full">
             <div className="scrollbar-thumb bg-black rounded-full"></div>
           </div>
