@@ -30,7 +30,7 @@ const SocialRotate = () => {
         <FontAwesomeIcon icon={faTwitter} className="text-zinc-400 text-2xl" />
       </a>
       <a
-        href="https://www.linkedin.com/in/kelvinEwurum"
+        href="https://www.linkedin.com/in/kelvin-ewurum/"
         target="_blank"
         rel="noopener noreferrer"
         className="transition-transform transform hover:scale-110"
