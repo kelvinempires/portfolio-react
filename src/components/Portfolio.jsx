@@ -24,15 +24,25 @@ import image1 from "../assets/image1.png";
 import form from "../assets/form.png";
 import slider from "../assets/slider.png";
 import chat from "../assets/chat.png";
+import peepMusic from "../assets/pmusic.png";
+
 
 const portfolioItems = [
   {
     title: "peepPluse",
-    description: "Twitter-like social media platform showcase.",
+    description: "Twitter-like peepPluse social media platform showcase.",
     url: "https://peeppluse.onrender.com",
     mediaType: "image",
     mediaSrc: peepPluse,
     githubCode: "https://github.com/kelvinempires/PeepPluse-.git",
+  },
+  {
+    title: "peepMusic",
+    description: "Advanced peepMusic streaming platform.",
+    url: "https://peepmusic.onrender.com",
+    mediaType: "image",
+    mediaSrc: peepMusic,
+    githubCode: "https://github.com/kelvinempires/peepMusic.git",
   },
   {
     title: "E-Commerce Website Design",
