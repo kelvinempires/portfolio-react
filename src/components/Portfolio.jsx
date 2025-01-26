@@ -55,7 +55,7 @@ const portfolioItems = [
   {
     title: "chat App",
     description: "Chatting App equipped with all Basics functionalities...",
-    url: "https://chatapp-3cg0.onrender.com",
+    url: "https://mern-chat-app-fgme.onrender.com",
     mediaType: "image",
     mediaSrc: chat,
     githubCode: "https://github.com/kelvinempires/chatapp.git",
