@@ -30,7 +30,7 @@ import peepMusic from "../assets/pmusic.png";
 const portfolioItems = [
   {
     title: "peepPluse",
-    description: "Twitter-like peepPluse social media platform showcase.",
+    description: "Twitter-like peepPluse social media platform.",
     url: "https://peeppluse.onrender.com",
     mediaType: "image",
     mediaSrc: peepPluse,
@@ -286,7 +286,7 @@ const Portfolio = () => {
     <main id="portfolio" className="p-4 sm:p-6 md:p-0 lg:p-0">
       <div className="border-b-2">
         <h1 className="text-zinc-400 flex justify-center font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 md:pb-10 lg:pb-10  font-bold">
-          Discover + 20 projects that I made with ❤️
+          Discover + 20 projects that I made with    <span className="animate-ping"> ❤️</span>
         </h1>
       </div>
       {/* <div className="flex flex-col text-center sm:flex-row md:gap-10 justify-center pt-4 sm:pt-6 md:pt-6 lg:pt-6 font-bold">
