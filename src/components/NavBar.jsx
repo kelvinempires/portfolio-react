@@ -40,7 +40,7 @@ const NavBar = () => {
           offset={-100}
           smooth={true}
           duration={500}
-          className="text-lg cursor-pointer hover:text-violet-900 transition-all relative pb-1"
+          className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
         >
           Home
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
@@ -53,7 +53,7 @@ const NavBar = () => {
           offset={45}
           smooth={true}
           duration={500}
-          className="text-lg cursor-pointer hover:text-violet-900 transition-all relative pb-1"
+          className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
         >
           About
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
@@ -65,11 +65,19 @@ const NavBar = () => {
           offset={-40}
           smooth={true}
           duration={500}
-          className="text-lg cursor-pointer hover:text-violet-900 transition-all relative pb-1"
+          className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
         >
           Portfolio
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
+        <a
+          href="https://drive.google.com/file/d/1xv7vtcBU8RA5rfPPtSrWMgzGu3IKxVvS/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
+        >
+          CV
+        </a>
       </div>
 
       <button
@@ -147,6 +155,18 @@ const NavBar = () => {
             onClick={() => setShow(false)}
           >
             Contact
+          </Link>
+          <Link
+            activeClass="active"
+            to="cv"
+            spy={true}
+            offset={-30}
+            smooth={true}
+            duration={500}
+            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
+            onClick={() => setShow(false)}
+          >
+            CV
           </Link>
         </div>
       )}
