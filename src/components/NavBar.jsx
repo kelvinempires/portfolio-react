@@ -30,7 +30,12 @@ const NavBar = () => {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <img className="h-16 w-20 md:h-24 md:w-28" src={logo} alt="logo" />
+      <Link to="home"
+       offset={-100}
+        smooth={true}
+        duration={500} > 
+        <img className="h-16 w-20 md:h-24 md:w-28 cursor-pointer" src={logo} alt="logo" />
+      </Link>
 
       <div className="hidden md:flex space-x-8">
         <Link
