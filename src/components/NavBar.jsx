@@ -30,11 +30,12 @@ const NavBar = () => {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <Link to="home"
-       offset={-100}
-        smooth={true}
-        duration={500} > 
-        <img className="h-16 w-20 md:h-24 md:w-28 cursor-pointer" src={logo} alt="logo" />
+      <Link to="home" offset={-100} smooth={true} duration={500}>
+        <img
+          className="h-16 w-20 md:h-24 md:w-28 cursor-pointer"
+          src={logo}
+          alt="logo"
+        />
       </Link>
 
       <div className="hidden md:flex space-x-8">
@@ -120,7 +121,7 @@ const NavBar = () => {
             offset={-100}
             smooth={true}
             duration={500}
-            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
+            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
             onClick={() => setShow(false)}
           >
             Home
@@ -132,7 +133,7 @@ const NavBar = () => {
             offset={-50}
             smooth={true}
             duration={500}
-            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
+            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
             onClick={() => setShow(false)}
           >
             About
@@ -144,7 +145,7 @@ const NavBar = () => {
             offset={-10}
             smooth={true}
             duration={500}
-            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
+            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
             onClick={() => setShow(false)}
           >
             Portfolio
@@ -156,23 +157,19 @@ const NavBar = () => {
             offset={-30}
             smooth={true}
             duration={500}
-            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
+            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
             onClick={() => setShow(false)}
           >
             Contact
           </Link>
-          <Link
-            activeClass="active"
-            to="cv"
-            spy={true}
-            offset={-30}
-            smooth={true}
-            duration={500}
-            className="text-lg cursor-pointer hover:text-purple-900 transition-colors"
-            onClick={() => setShow(false)}
+          <a
+            href="https://drive.google.com/file/d/1xv7vtcBU8RA5rfPPtSrWMgzGu3IKxVvS/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
           >
             CV
-          </Link>
+          </a>
         </div>
       )}
     </nav>
