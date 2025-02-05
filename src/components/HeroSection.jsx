@@ -1,10 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import heroPics1 from "../assets/kelvin.png";
-// import SocialIcons from "./SocialIcons";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+
 
 const HeroSection = () => {
- 
+ const [text] = useTypewriter({
+   words: [
+     "React",
+     "Frontend",
+     "Backend ",
+     "Web Design",
+     "UI/UX ",
+     "Full-Stack",
+     "javaScript ",
+     "HTML",
+     "CSS ",
+     "Next.js",
+     "typeScript",
+     "Node.js",
+     "Express",
+     "MongoDB",
+   ],
+   loop: 100,
+   onLoopDone: () => console.log(`loop completed after 3 runs.`),
+ });
+
   return (
     <section className="flex">
       {/* <SocialIcons /> */}
@@ -13,7 +34,7 @@ const HeroSection = () => {
         className="h-screen  md:mt-24 mt-16 w-screen max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-8 "
       >
         <div className="relative z-10 bottom-0 mt-5 sm:mt-10">
-          <span className="text-2xl sm:text-sm font-semibold block md:inline">
+          <span className="text-2xl sm:text-3xl font-semibold block md:inline">
             Hello,
           </span>
           <br className="block md:hidden" />
@@ -23,9 +44,14 @@ const HeroSection = () => {
             </span>
             <span className="block md:inline">Kelvin Ewurum</span>
             <br />
-            <span className="text-customColor text-4xl sm:text-5xl">
-              Full Stack Web Developer.
+            <span className="text-customColor text-4xl sm:text-5xl animateTyping">
+              Software Developer{" "}
             </span>
+            <br className="block md:hidden" />
+            <span className="text-customColor text-4xl sm:text-5xl">
+              {text}
+            </span>
+            <Cursor cursorColor="purple" />
           </span>
 
           <p className="mt-6 text-xl bg- max-w-2xl hidden md:block text-colorP">

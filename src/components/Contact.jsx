@@ -49,16 +49,16 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="section-p1 flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-24"
+      className="section-p1 flex flex-col md:flex-row items-center justify-center py-12 px-8 sm:px-12 md:px-24 "
     >
-      <div className="details w-full md:w-1/2 mb-12 md:mb-0">
+      <div className="details w-full  md:w-1/2 mb-12 md:mb-0">
         <h2 className="text-4xl font-bold mb-4 text-zinc-400 mt-6">
           Contact Me
         </h2>
         <p className="mb-6">
           Fill out the form to discuss work opportunities or inquiries.
         </p>
-        <form className="space-y-4" ref={form} onSubmit={sendEmail}>
+        <form className="space-y-4 " ref={form} onSubmit={sendEmail}>
           <input
             type="text"
             className="w-full md:w-3/4 p-2 border border-gray-300 rounded focus:border-indigo-500 hover:border-indigo-400 transition-colors duration-300"
