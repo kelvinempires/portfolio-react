@@ -10,9 +10,9 @@ const HeroSection = () => {
       {/* <SocialIcons /> */}
       <div
         id="home"
-        className="h-screen  md:mt-24 mt-16 w-full max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-16  lg:py-12"
+        className="h-screen  md:mt-24 mt-16 w-screen max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-8 "
       >
-        <div className="relative z-10">
+        <div className="relative z-10 bottom-0 mt-5 sm:mt-10">
           <span className="text-2xl sm:text-sm font-semibold block md:inline">
             Hello,
           </span>
@@ -70,7 +70,7 @@ const HeroSection = () => {
         <img
           src={heroPics1}
           alt="profile"
-          className={`absolute top-[-2.5rem] mt-10 md:mt-1 h-[530px] md:right-0 sm:right-5 ml-20 sm:ml-10 mr-8 sm:mr-4 z-[-1] object-cover transition-opacity duration-500`}
+          className={`absolute top-[-2.5rem] mt-10 md:mt-1 h-[530px] md:right-0 sm:mt-5 sm:right-[-90px] ml-20 sm:ml-5 mr-8 sm:mr-4 z-[-1] object-cover transition-opacity duration-500`}
         />
       </div>
     </section>
