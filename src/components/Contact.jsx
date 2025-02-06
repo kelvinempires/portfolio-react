@@ -197,36 +197,6 @@ const Contact = () => {
             <FontAwesomeIcon icon={faGithub} className="text-black text-2xl" />
           </a>
         </div>
-        {/* <ul className="space-y-4">
-          <li className="flex items-center">
-            <FontAwesomeIcon
-              icon={faLocationDot}
-              className="text-red-600 text-2xl mr-4"
-            />
-            <p className="text-lg">19 Allen Avenue,Ikeja, Lagos, Nigeria</p>
-          </li> */}
-        {/* <li className="flex items-center">
-            <a
-              href="mailto:kelvinewurum@gmail.com"
-              className="flex items-center"
-            >
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                className="text-blue-600 text-2xl mr-4"
-              />
-              <p className="text-lg">kelvinewurum@gmail.com</p>
-            </a>
-          </li> */}
-        {/* <li className="flex items-center">
-            <a href="tel:+2349153421622" className="flex items-center">
-              <FontAwesomeIcon
-                icon={faPhone}
-                className="text-green-600 text-2xl mr-4"
-              />
-              <p className="text-lg">09153421622</p>
-            </a>
-          </li> */}
-        {/* </ul> */}
       </div>
       <div className="map w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg">
         <iframe
