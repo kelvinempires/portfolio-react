@@ -55,7 +55,7 @@ const HeroSection = () => {
           </span>
 
           <p className="mt-6 text-xl bg- max-w-2xl hidden md:block text-colorP">
-            Welcome to {"Kelvin's"} Web Development Portfolio, Discover my
+            Welcome to my Web Development Portfolio, Discover my
             projects, skills, and experience in web development, design, and
             software engineering.
           </p>

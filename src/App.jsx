@@ -19,7 +19,7 @@ export default function App() {
       <Contact />
       <Footer />
       <Rotate />
-      <SocialRotate/>
+      <SocialRotate />
     </>
   );
 }
