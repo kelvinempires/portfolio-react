@@ -56,7 +56,7 @@ const Contact = () => {
           Contact Me
         </h2>
         <p className="mb-6">
-          Fill out the form to discuss work opportunities or inquiries.
+          Fill out the form for work opportunities or inquiries.
         </p>
         <form className="space-y-4 " ref={form} onSubmit={sendEmail}>
           <input
