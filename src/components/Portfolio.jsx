@@ -6,23 +6,24 @@ import {
   faPlayCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
-import gallery from "../assets/mygallery.png";
-import harvest from "../assets/harvest.png";
-import perfume from "../assets/perfume.png";
-import heroSection from "../assets/landingpage.png";
+// import gallery from "../assets/mygallery.png";
+// import harvest from "../assets/harvest.png";
+// import perfume from "../assets/perfume.png";
+// import heroSection from "../assets/landingpage.png";
+
+// import qrCode from "../assets/qrCode.png";
+// import card from "../assets/c.png";
+// import shoe from "../assets/shoe.png";
+// import fly from "../assets/fly.png";
+// import flex from "../assets/flex.png";
+// import jumia from "../assets/jumia.png";
+// import image1 from "../assets/image1.png";
+// import form from "../assets/form.png";
+// import slider from "../assets/slider.png";
+import weather from "../assets/weather.png";
+import portfolio from "../assets/portfolio.png";
 import peepPluse from "../assets/peepPluse.png";
 import ecoms from "../assets/ecoms.png";
-import qrCode from "../assets/qrCode.png";
-import portfolio from "../assets/portfolio.png";
-import card from "../assets/c.png";
-import shoe from "../assets/shoe.png";
-import fly from "../assets/fly.png";
-import flex from "../assets/flex.png";
-import weather from "../assets/weather.png";
-import jumia from "../assets/jumia.png";
-import image1 from "../assets/image1.png";
-import form from "../assets/form.png";
-import slider from "../assets/slider.png";
 import chat from "../assets/chat.png";
 import peepMusic from "../assets/pmusic.png";
 
@@ -61,14 +62,6 @@ const portfolioItems = [
     githubCode: "https://github.com/kelvinempires/chatapp.git",
   },
   {
-    title: "portfolio",
-    description: "portfolio showcasing diverse projects",
-    url: "https://kelvinempires.github.io/portfolio-tailwind/",
-    mediaType: "image",
-    mediaSrc: portfolio,
-    githubCode: "https://github.com/kelvinempires/portfolio-tailwind.git",
-  },
-  {
     title: "Weather App",
     description: "keep track of the weather from wherever you are.. ",
     url: "https://kelvinempires.github.io/weather--app/",
@@ -77,117 +70,126 @@ const portfolioItems = [
     githubCode: "https://github.com/kelvinempires/weather--app.git",
   },
   {
-    title: "cart display",
-    description: "Showcasing products with appealing aesthetics.",
-    url: "https://kelvinempires.github.io/shoppingCart/",
+    title: "portfolio",
+    description: "portfolio showcasing diverse projects",
+    url: "https://kelvinempires.github.io/portfolio-tailwind/",
     mediaType: "image",
-    mediaSrc: jumia,
-    githubCode: "https://github.com/kelvinempires/shoppingCart.git",
+    mediaSrc: portfolio,
+    githubCode: "https://github.com/kelvinempires/portfolio-tailwind.git",
   },
-  {
-    title: "responsive frontend display",
-    description: "Intuitive and user-friendly interface for all devices.",
-    url: "https://kelvinempires.github.io/responsive-font-end/",
-    mediaType: "image",
-    mediaSrc: image1,
-    githubCode: "https://github.com/kelvinempires/responsive-font-end.git",
-  },
-  {
-    title: "Form",
-    description: "non-responsive form with suboptimal navigation.",
-    url: "https://kelvinempires.github.io/form/",
-    mediaType: "image",
-    mediaSrc: form,
-    githubCode: "https://github.com/kelvinempires/form.git",
-  },
-  {
-    title: "HarvestGrove",
-    description: "Beginner-friendly web page with clear and clean design. ",
-    url: "https://kelvinempires.github.io/harvestGrove/ ",
-    mediaType: "image",
-    mediaSrc: harvest,
-    githubCode: "https://github.com/kelvinempires/harvestGrove.git",
-  },
-  {
-    title: "Simple Gallery",
-    description: " gallery gride display with simple styling layout ..",
-    url: "https://kelvinempires.github.io/rensponsive-wabpage/",
-    mediaType: "image",
-    mediaSrc: gallery,
-    githubCode: "https://github.com/kelvinempires/rensponsive-wabpage.git",
-  },
-  {
-    title: "Bootstrap Hero Se..",
-    description: "effective use of Bootstrap visually appealing layout..",
-    url: "https://kelvinempires.github.io/bootsrap-assignment/",
-    mediaType: "image",
-    mediaSrc: heroSection,
-    githubCode: "https://github.com/kelvinempires/bootsrap-assignment.git",
-  },
-  {
-    title: "Flex Box ",
-    description: "flexbox display of a modern and efficient user interface ",
-    url: "https://kelvinempires.github.io/landing-page-/",
-    mediaType: "image",
-    mediaSrc: flex,
-    githubCode: "https://github.com/kelvinempires/landing-page-.git",
-  },
-  {
-    title: "fragrance",
-    description: "A captivating responsive premium banner design  ",
-    url: "https://kelvinempires.github.io/fragnace/",
-    mediaType: "image",
-    mediaSrc: perfume,
-    githubCode: "https://github.com/kelvinempires/fragnace.git",
-  },
-  {
-    title: "Fylo-data",
-    description: "Front-end solutions from Frontend Masters",
-    url: "https://kelvinempires.github.io/fylo-data-frontndmentor/",
-    mediaType: "image",
-    mediaSrc: fly,
-    githubCode: "https://github.com/kelvinempires/fylo-data-frontndmentor.git",
-  },
-  {
-    title: "Qr-code",
-    description: "Qr-code  project with basic technologies",
-    url: "https://kelvinempires.github.io/qr-code/",
-    mediaType: "image",
-    mediaSrc: qrCode,
-    githubCode: "https://github.com/kelvinempires/qr-code.git",
-  },
-  {
-    title: "Image slider",
-    description: "responsive image slider with basic technologies",
-    url: "https://kelvinempires.github.io/image-slider/",
-    mediaType: "image",
-    mediaSrc: slider,
-    githubCode: "https://github.com/kelvinempires/image-slider.git",
-  },
-  {
-    title: "card Game",
-    description: "card Game project with various technologies",
-    url: "https://kelvinempires.github.io/my-first-game/",
-    mediaType: "image",
-    mediaSrc: card,
-    githubCode: "https://github.com/kelvinempires/my-first-game.git",
-  },
-  {
-    title: "Shoe",
-    description: "foot ware display project with various technologies",
-    url: "https://kelvinempires.github.io/tail-wind-/",
-    mediaType: "image",
-    mediaSrc: shoe,
-    githubCode: "https://github.com/kelvinempires/tail-wind-.git",
-  },
-  {
-    title: "Banking App",
-    description: "(under-deployment....) real-time banking App.....",
-    url: "https://example.com/full-stack-project",
-    mediaType: "image",
-    mediaSrc: harvest,
-    githubCode: "https://github.com/kelvinempires/peepBank.git",
-  },
+
+  // {
+  //   title: "cart display",
+  //   description: "Showcasing products with appealing aesthetics.",
+  //   url: "https://kelvinempires.github.io/shoppingCart/",
+  //   mediaType: "image",
+  //   mediaSrc: jumia,
+  //   githubCode: "https://github.com/kelvinempires/shoppingCart.git",
+  // },
+  // {
+  //   title: "responsive frontend display",
+  //   description: "Intuitive and user-friendly interface for all devices.",
+  //   url: "https://kelvinempires.github.io/responsive-font-end/",
+  //   mediaType: "image",
+  //   mediaSrc: image1,
+  //   githubCode: "https://github.com/kelvinempires/responsive-font-end.git",
+  // },
+  // {
+  //   title: "Form",
+  //   description: "non-responsive form with suboptimal navigation.",
+  //   url: "https://kelvinempires.github.io/form/",
+  //   mediaType: "image",
+  //   mediaSrc: form,
+  //   githubCode: "https://github.com/kelvinempires/form.git",
+  // },
+  // {
+  //   title: "HarvestGrove",
+  //   description: "Beginner-friendly web page with clear and clean design. ",
+  //   url: "https://kelvinempires.github.io/harvestGrove/ ",
+  //   mediaType: "image",
+  //   mediaSrc: harvest,
+  //   githubCode: "https://github.com/kelvinempires/harvestGrove.git",
+  // },
+  // {
+  //   title: "Simple Gallery",
+  //   description: " gallery gride display with simple styling layout ..",
+  //   url: "https://kelvinempires.github.io/rensponsive-wabpage/",
+  //   mediaType: "image",
+  //   mediaSrc: gallery,
+  //   githubCode: "https://github.com/kelvinempires/rensponsive-wabpage.git",
+  // },
+  // {
+  //   title: "Bootstrap Hero Se..",
+  //   description: "effective use of Bootstrap visually appealing layout..",
+  //   url: "https://kelvinempires.github.io/bootsrap-assignment/",
+  //   mediaType: "image",
+  //   mediaSrc: heroSection,
+  //   githubCode: "https://github.com/kelvinempires/bootsrap-assignment.git",
+  // },
+  // {
+  //   title: "Flex Box ",
+  //   description: "flexbox display of a modern and efficient user interface ",
+  //   url: "https://kelvinempires.github.io/landing-page-/",
+  //   mediaType: "image",
+  //   mediaSrc: flex,
+  //   githubCode: "https://github.com/kelvinempires/landing-page-.git",
+  // },
+  // {
+  //   title: "fragrance",
+  //   description: "A captivating responsive premium banner design  ",
+  //   url: "https://kelvinempires.github.io/fragnace/",
+  //   mediaType: "image",
+  //   mediaSrc: perfume,
+  //   githubCode: "https://github.com/kelvinempires/fragnace.git",
+  // },
+  // {
+  //   title: "Fylo-data",
+  //   description: "Front-end solutions from Frontend Masters",
+  //   url: "https://kelvinempires.github.io/fylo-data-frontndmentor/",
+  //   mediaType: "image",
+  //   mediaSrc: fly,
+  //   githubCode: "https://github.com/kelvinempires/fylo-data-frontndmentor.git",
+  // },
+  // {
+  //   title: "Qr-code",
+  //   description: "Qr-code  project with basic technologies",
+  //   url: "https://kelvinempires.github.io/qr-code/",
+  //   mediaType: "image",
+  //   mediaSrc: qrCode,
+  //   githubCode: "https://github.com/kelvinempires/qr-code.git",
+  // },
+  // {
+  //   title: "Image slider",
+  //   description: "responsive image slider with basic technologies",
+  //   url: "https://kelvinempires.github.io/image-slider/",
+  //   mediaType: "image",
+  //   mediaSrc: slider,
+  //   githubCode: "https://github.com/kelvinempires/image-slider.git",
+  // },
+  // {
+  //   title: "card Game",
+  //   description: "card Game project with various technologies",
+  //   url: "https://kelvinempires.github.io/my-first-game/",
+  //   mediaType: "image",
+  //   mediaSrc: card,
+  //   githubCode: "https://github.com/kelvinempires/my-first-game.git",
+  // },
+  // {
+  //   title: "Shoe",
+  //   description: "foot ware display project with various technologies",
+  //   url: "https://kelvinempires.github.io/tail-wind-/",
+  //   mediaType: "image",
+  //   mediaSrc: shoe,
+  //   githubCode: "https://github.com/kelvinempires/tail-wind-.git",
+  // },
+  // {
+  //   title: "Banking App",
+  //   description: "(under-deployment....) real-time banking App.....",
+  //   url: "https://example.com/full-stack-project",
+  //   mediaType: "image",
+  //   mediaSrc: harvest,
+  //   githubCode: "https://github.com/kelvinempires/peepBank.git",
+  // },
   // Add more portfolio items here
 ];
 
@@ -286,7 +288,8 @@ const Portfolio = () => {
     <main id="portfolio" className="p-4 sm:p-6 md:p-0 lg:p-0">
       <div className="border-b-2">
         <h1 className="text-zinc-400 flex justify-center text-center font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 md:pb-10 lg:pb-10  font-bold">
-          Discover + 20 projects that I made with    <span className="animate-ping"> ❤️</span>
+          Discover some projects that I made with
+          <span className="animate-ping"> ❤️</span>
         </h1>
       </div>
       {/* <div className="flex flex-col text-center sm:flex-row md:gap-10 justify-center pt-4 sm:pt-6 md:pt-6 lg:pt-6 font-bold">
