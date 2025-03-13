@@ -44,10 +44,11 @@ const HeroSection = () => {
             </span>
             <span className="block md:inline">Kelvin Ewurum</span>
             <br />
-            <span className="text-customColor text-4xl sm:text-5xl animateTyping">
+            <span className="text-customColor text-4xl sm:text-5xl ">
               Software Developer{" "}
             </span>
-            <br className="block md:hidden" />
+            <br className="block lg:hidden" />
+            <span className="animateTyping text-blue-300"></span>
             <span className="text-customColor text-4xl sm:text-5xl">
               {text}
             </span>
@@ -55,9 +56,9 @@ const HeroSection = () => {
           </span>
 
           <p className="mt-6 text-xl bg- max-w-2xl hidden md:block text-colorP">
-            Welcome to my Web Development Portfolio, Discover my
-            projects, skills, and experience in web development, design, and
-            software engineering.
+            Welcome to my Web Development Portfolio, Discover my projects,
+            skills, and experience in web development, design, and software
+            engineering.
           </p>
           <button
             onClick={() => {
