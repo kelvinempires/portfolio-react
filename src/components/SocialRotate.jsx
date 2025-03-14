@@ -18,7 +18,7 @@ const SocialRotate = () => {
       >
         <FontAwesomeIcon
           icon={faInstagram}
-          className="text-zinc-400 text-[-1rem] md:text-2xl"
+          className="text-zinc-400 text-[-1rem] md:text-2xl rotate-[-90deg]"
         />
       </a>
       <a
@@ -29,29 +29,29 @@ const SocialRotate = () => {
       >
         <FontAwesomeIcon
           icon={faTwitter}
-          className="text-zinc-400 text-[-1rem] md:text-2xl"
+          className="text-zinc-400 text-[-1rem] md:text-2xl rotate-[-90deg]"
         />
       </a>
       <a
         href="https://www.linkedin.com/in/kelvin-ewurum/"
         target="_blank"
         rel="noopener noreferrer"
-        className="transition-transform transform hover:scale-110"
+        className="transition-transform transform hover:scale-110 "
       >
         <FontAwesomeIcon
           icon={faLinkedin}
-          className="text-zinc-400 text-[-1rem] md:text-2xl"
+          className="text-zinc-400 text-[-1rem] md:text-2xl rotate-[-90deg]"
         />
       </a>
       <a
         href="https://github.com/kelvinempires?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
-        className="transition-transform transform hover:scale-110"
+        className="transition-transform transform hover:scale-110 "
       >
         <FontAwesomeIcon
           icon={faGithub}
-          className="text-zinc-400 text-[-1rem] md:text-2xl"
+          className="text-zinc-400 text-[-1rem] md:text-2xl rotate-[-90deg]"
         />
       </a>
       <a
@@ -62,7 +62,7 @@ const SocialRotate = () => {
       >
         <FontAwesomeIcon
           icon={faEnvelope}
-          className="text-zinc-400 text-[-1rem] md:text-2xl "
+          className="text-zinc-400 text-[-1rem] md:text-2xl rotate-[-90deg]"
         />
       </a>
       <span className="w-28 h-0.5 bg-slate-400"></span>
