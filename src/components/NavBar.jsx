@@ -120,7 +120,7 @@ const NavBar = () => {
       )}
 
       {show && (
-        <div className="absolute top-20 left-0 min-w-80 h-screen bg-customBlue shadow-md rounded-xl md:hidden flex flex-col gap-8 p-10 z-20">
+        <div className="absolute top-20 left-0 min-w-full h-screen bg-customBlue shadow-md rounded-xl md:hidden flex flex-col gap-8 p-10 z-20">
           <Link
             activeClass="active"
             to="home"
