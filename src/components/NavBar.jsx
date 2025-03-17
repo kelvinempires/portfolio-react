@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/rmv1.png";
 import { Link } from "react-scroll";
@@ -105,12 +105,19 @@ const NavBar = () => {
           Contact Me
         </span>
       </button>
-
-      <FontAwesomeIcon
-        icon={faBars}
-        className="text-purple-900 text-3xl cursor-pointer md:hidden"
-        onClick={() => setShow(!show)}
-      />
+      {show ? (
+        <FontAwesomeIcon
+          icon={faTimes} // The "Cancel" or close icon
+          className="text-purple-900 text-3xl cursor-pointer md:hidden transition-opacity duration-300 opacity-100"
+          onClick={() => setShow(!show)} // Toggles to the menu
+        />
+      ) : (
+        <FontAwesomeIcon
+          icon={faBars} // The menu icon
+          className="text-purple-900 text-3xl cursor-pointer md:hidden transition-opacity duration-300 opacity-100"
+          onClick={() => setShow(!show)} // Toggles to the cancel
+        />
+      )}
 
       {show && (
         <div className="absolute top-20 left-0 min-w-80 h-screen bg-customBlue shadow-md rounded-xl md:hidden flex flex-col gap-8 p-10 z-20">
