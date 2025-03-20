@@ -3,17 +3,17 @@ import { FaArrowRight } from "react-icons/fa";
 const MyList = () => {
   const items = [
     "HTML/CSS",
-    "JavaScript",
-    "React",
     "TailwindCSS",
+    "JavaScript",
     "TypeScript",
+    "React",
     "Next.js",
     "Express",
     "Node.js",
-    "MongoDB",
-    "Mongoose",
-    "Appwrite",
-    "Century",
+    "MongoDB/Mongoose",
+    "Postman",
+    "GitHub",
+    "Vercel/Render",
   ];
 
   return (
