@@ -55,7 +55,7 @@ const portfolioItems = [
   },
   {
     title: "chat App",
-    description: "Chatting App equipped with all Basics functionalities...",
+    description: "real time chatting App with smooth responsive design",
     url: "https://mern-chat-app-fgme.onrender.com",
     mediaType: "image",
     mediaSrc: chat,

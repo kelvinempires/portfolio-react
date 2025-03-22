@@ -66,7 +66,7 @@ p {
   display: inline-block;
   width: 700px;
   white-space: nowrap;
-  color: blueviolet;
+  color: rgba(137, 43, 226, 0.667);
   animation: marquee 30s linear infinite;
 }
 
