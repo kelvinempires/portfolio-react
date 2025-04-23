@@ -19,7 +19,7 @@ import {
 // import jumia from "../assets/jumia.png";
 // import image1 from "../assets/image1.png";
 // import form from "../assets/form.png";
-// import slider from "../assets/slider.png";
+import joel from "../assets/joel.png";
 import weather from "../assets/weather.png";
 import portfolio from "../assets/portfolio.png";
 import peepPluse from "../assets/peepPluse.png";
@@ -29,6 +29,14 @@ import peepMusic from "../assets/pmusic.png";
 
 
 const portfolioItems = [
+  {
+    title: "E-commerce website",
+    description: "complete e-commerce website with Admin page",
+    url: "https://joel-hair.vercel.app",
+    mediaType: "image",
+    mediaSrc: joel,
+    githubCode: "https://github.com/kelvinempires/joe-hair.git",
+  },
   {
     title: "peepPluse",
     description: "Twitter-like peepPluse social media platform.",
