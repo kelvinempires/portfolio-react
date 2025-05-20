@@ -11,8 +11,9 @@ import SocialRotate from "./components/SocialRotate";
 export default function App() {
   return (
     <>
-      <CustomCursor />
       <NavBar />
+    <div className="flex flex-col pl-2 lg:px-8 ">
+      <CustomCursor />
       <HeroSection />
       <About />
       <Portfolio />
@@ -20,6 +21,7 @@ export default function App() {
       <Footer />
       <Rotate />
       <SocialRotate />
+    </div>
     </>
   );
 }

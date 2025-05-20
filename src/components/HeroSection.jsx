@@ -45,11 +45,11 @@ const HeroSection = () => {
             </span>
             <span className="prata-regular block md:inline">Kelvin Ewurum</span>
             <br />
-            <span className="prata-regular text-customColor text-4xl sm:text-5xl ">
+            <span className="prata-regular text-customColor text-3xl sm:text-5xl ">
               Software Developer{", "}
             </span>
             <br className="block lg:hidden" />
-            <span className="font-playfair text-customColor text-4xl sm:text-5xl">
+            <span className="font-playfair text-customColor text-2xl sm:text-5xl">
               {text}
             </span>
             <Cursor cursorColor="purple" />
