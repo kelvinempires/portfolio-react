@@ -4,7 +4,7 @@ import MyList from "./MyList";
 
 const About = () => {
   return (
-    <section className=" overflow-hidden relative md:py-8 px-8 sm:px-16 md:px-24">
+    <section className=" overflow-hidden relative pt-8 sm:pt-0 mt-10 sm:mt-0 md:py-8 px-8 sm:px-16 md:px-24">
       <div
         id="about"
         className="flex flex-col lg:flex-row h-auto items-center md:py-20 space-y-8 lg:space-y-0 lg:space-x-8"
