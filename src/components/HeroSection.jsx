@@ -34,32 +34,36 @@ const HeroSection = () => {
         className="h-screen  md:mt-24 mt-16 w-screen max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-8 "
       >
         <div className="relative z-10 bottom-0 mt-5 sm:mt-10">
-          <span className="text-2xl sm:text-3xl font-semibold block md:inline">
-            Hello,
-          </span>
+          <div className="flex items-center gap-2">
+            <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
+            <p className="font-medium text-sm md:text-base">Hello</p>
+          </div>
           <br className="block md:hidden" />
           <span className="text-5xl font-bold mt-4 block ">
-            <span className="text-customColor text-4xl sm:text-5xl">
+            <span className="prata-regular text-customColor text-4xl sm:text-5xl">
               {"I'm "}
             </span>
-            <span className="block md:inline">Kelvin Ewurum</span>
+            <span className="prata-regular block md:inline">Kelvin Ewurum</span>
             <br />
-            <span className="text-customColor text-4xl sm:text-5xl ">
-              Software Developer{" "}
+            <span className="prata-regular text-customColor text-4xl sm:text-5xl ">
+              Software Developer{", "}
             </span>
             <br className="block lg:hidden" />
-            <span className="animateTyping text-blue-300"></span>
-            <span className="text-customColor text-4xl sm:text-5xl">
+            <span className="font-playfair text-customColor text-4xl sm:text-5xl">
               {text}
             </span>
             <Cursor cursorColor="purple" />
           </span>
 
-          <p className="mt-6 text-xl bg- max-w-2xl hidden md:block text-colorP">
-            Welcome to my Web Development Portfolio, Discover my projects,
-            skills, and experience in web development, design, and software
-            engineering.
-          </p>
+          <div className="max-w-2xl hidden md:block text-sm text-colorP mt-6">
+            <p className="inline">
+              Welcome to my Web Development Portfolio, Discover my projects,
+              skills, and experience in web development, design, and software
+              engineering
+              <span className="inline-block align-middle ml-2 w-8 md:w-11 h-[2px] bg-[#414141]"></span>
+            </p>
+          </div>
+
           <button
             onClick={() => {
               document

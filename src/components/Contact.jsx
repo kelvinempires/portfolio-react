@@ -52,7 +52,7 @@ const Contact = () => {
       className="section-p1 flex flex-col md:flex-row items-center justify-center py-12 px-8 sm:px-12 md:px-24 "
     >
       <div className="details w-full  md:w-1/2 mb-12 md:mb-0">
-        <h2 className="text-4xl font-bold mb-4 text-zinc-400 mt-6">
+        <h2 className="font-playfair text-4xl font-bold mb-4 text-zinc-400 mt-6">
           Contact Me
         </h2>
         <p className="mb-6">
@@ -129,7 +129,7 @@ const Contact = () => {
           </button>
         </form>
         <ToastContainer />
-        <h3 className="text-2xl font-semibold mt-8 mb-6 text-zinc-400">
+        <h3 className="prata-regular text-2xl font-semibold mt-8 mb-6 text-zinc-400">
           Would love to hear from you
         </h3>
         <div className="social-icons flex space-x-4 mb-6">
@@ -145,7 +145,7 @@ const Contact = () => {
             />
           </a>
           <a
-            href="https://www.linkedin.com/in/kelvin-ewurum/"
+            href="https://www.linkedin.com/in/chibuike-kelvin-6b4413245"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-transform transform hover:scale-110"

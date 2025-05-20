@@ -18,17 +18,17 @@ const MyList = () => {
 
   return (
     <div className="text-center md:text-left p-10 w-full h-auto custom-shadow-indigo transition duration-200 ease-in-out">
-      <p className="text-zinc-400 text-3xl font-bold">About Me</p>
+      <p className="font-playfair text-zinc-400 text-3xl font-bold">About Me</p>
       <div>
         <abbr title="experience">
           <strong className="text-xl">Experience: </strong>
         </abbr>
-        <span className="text-zinc-300">
+        <span className="text-zinc-300 text-sm">
           With over five years in tech, my diverse skill sets include:
         </span>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm mt-4">
           {items.map((item, index) => (
-            <div key={index} className="flex items-center ml-4">
+            <div key={index} className="flex items-center ml-4 text-xs">
               <FaArrowRight className="text-purple-900 mr-2 text-xs" />
               <span>{item}</span>
             </div>
@@ -39,10 +39,10 @@ const MyList = () => {
         </abbr>
         <div className="mt-2">
           <h3>National Open University of Nigeria, Victoria Island, Lagos</h3>
-          <p>BSc in Computer Science</p>
+          <p className="text-sm"> BSc in Computer Science</p>
           <h3>Gomycode, Ikeja, Lagos, Nigeria</h3>
-          <p>Software Development Certificate</p>
-          <p>MongoDB and Postman Certification</p>
+          <p className="text-sm">Software Development Certificate</p>
+          <p className="text-sm">MongoDB and Postman Certification</p>
         </div>
       </div>
       <div className="relative overflow-hidden whitespace-nowrap bg-gray-200 py-2 marquee-container">

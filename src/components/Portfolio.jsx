@@ -86,23 +86,7 @@ const portfolioItems = [
     githubCode: "https://github.com/kelvinempires/portfolio-tailwind.git",
   },
 
-  // {
-  //   title: "cart display",
-  //   description: "Showcasing products with appealing aesthetics.",
-  //   url: "https://kelvinempires.github.io/shoppingCart/",
-  //   mediaType: "image",
-  //   mediaSrc: jumia,
-  //   githubCode: "https://github.com/kelvinempires/shoppingCart.git",
-  // },
-  // {
-  //   title: "responsive frontend display",
-  //   description: "Intuitive and user-friendly interface for all devices.",
-  //   url: "https://kelvinempires.github.io/responsive-font-end/",
-  //   mediaType: "image",
-  //   mediaSrc: image1,
-  //   githubCode: "https://github.com/kelvinempires/responsive-font-end.git",
-  // },
-  // {
+
   //   title: "Form",
   //   description: "non-responsive form with suboptimal navigation.",
   //   url: "https://kelvinempires.github.io/form/",
@@ -118,47 +102,7 @@ const portfolioItems = [
   //   mediaSrc: harvest,
   //   githubCode: "https://github.com/kelvinempires/harvestGrove.git",
   // },
-  // {
-  //   title: "Simple Gallery",
-  //   description: " gallery gride display with simple styling layout ..",
-  //   url: "https://kelvinempires.github.io/rensponsive-wabpage/",
-  //   mediaType: "image",
-  //   mediaSrc: gallery,
-  //   githubCode: "https://github.com/kelvinempires/rensponsive-wabpage.git",
-  // },
-  // {
-  //   title: "Bootstrap Hero Se..",
-  //   description: "effective use of Bootstrap visually appealing layout..",
-  //   url: "https://kelvinempires.github.io/bootsrap-assignment/",
-  //   mediaType: "image",
-  //   mediaSrc: heroSection,
-  //   githubCode: "https://github.com/kelvinempires/bootsrap-assignment.git",
-  // },
-  // {
-  //   title: "Flex Box ",
-  //   description: "flexbox display of a modern and efficient user interface ",
-  //   url: "https://kelvinempires.github.io/landing-page-/",
-  //   mediaType: "image",
-  //   mediaSrc: flex,
-  //   githubCode: "https://github.com/kelvinempires/landing-page-.git",
-  // },
-  // {
-  //   title: "fragrance",
-  //   description: "A captivating responsive premium banner design  ",
-  //   url: "https://kelvinempires.github.io/fragnace/",
-  //   mediaType: "image",
-  //   mediaSrc: perfume,
-  //   githubCode: "https://github.com/kelvinempires/fragnace.git",
-  // },
-  // {
-  //   title: "Fylo-data",
-  //   description: "Front-end solutions from Frontend Masters",
-  //   url: "https://kelvinempires.github.io/fylo-data-frontndmentor/",
-  //   mediaType: "image",
-  //   mediaSrc: fly,
-  //   githubCode: "https://github.com/kelvinempires/fylo-data-frontndmentor.git",
-  // },
-  // {
+
   //   title: "Qr-code",
   //   description: "Qr-code  project with basic technologies",
   //   url: "https://kelvinempires.github.io/qr-code/",
@@ -166,30 +110,7 @@ const portfolioItems = [
   //   mediaSrc: qrCode,
   //   githubCode: "https://github.com/kelvinempires/qr-code.git",
   // },
-  // {
-  //   title: "Image slider",
-  //   description: "responsive image slider with basic technologies",
-  //   url: "https://kelvinempires.github.io/image-slider/",
-  //   mediaType: "image",
-  //   mediaSrc: slider,
-  //   githubCode: "https://github.com/kelvinempires/image-slider.git",
-  // },
-  // {
-  //   title: "card Game",
-  //   description: "card Game project with various technologies",
-  //   url: "https://kelvinempires.github.io/my-first-game/",
-  //   mediaType: "image",
-  //   mediaSrc: card,
-  //   githubCode: "https://github.com/kelvinempires/my-first-game.git",
-  // },
-  // {
-  //   title: "Shoe",
-  //   description: "foot ware display project with various technologies",
-  //   url: "https://kelvinempires.github.io/tail-wind-/",
-  //   mediaType: "image",
-  //   mediaSrc: shoe,
-  //   githubCode: "https://github.com/kelvinempires/tail-wind-.git",
-  // },
+  
   // {
   //   title: "Banking App",
   //   description: "(under-deployment....) real-time banking App.....",
@@ -295,30 +216,11 @@ const Portfolio = () => {
   return (
     <main id="portfolio" className="p-4 sm:p-6 md:p-0 lg:p-0">
       <div className="border-b-2 m-4 md:m-20 lg:m-16">
-        <h1 className="text-zinc-400 flex justify-center text-center font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 md:pb-10 lg:pb-10  font-bold">
-          Discover some projects that I made with
-          <span className="animate-bounce"> ❤️</span>
+        <h1 className="font-playfair text-center text-zinc-700 dark:text-zinc-300 font-serif font-bold text-2xl sm:text-3xl md:text-4xl px-4 py-8 tracking-tight leading-tight">
+          Explore the projects I&apos;ve built with creativity and code
         </h1>
       </div>
-      {/* <div className="flex flex-col t text-center sm:flex-row md:gap-10 justify-center pt-4 sm:pt-6 md:pt-6 lg:pt-6 font-bold">
-        <p className="hover:bg-black transition duration-300 text-white px-4 py-2 text-xs sm:text-sm md:text-base lg:text-lg">
-          ALL PROJECTS
-        </p>
-        <p
-          onClick={() => {
-            document
-              .getElementById("portfolio")
-              .scrollIntoView({ behavior: "smooth" });
-          }}
-          className="hover:bg-black transition duration-300 text-white px-4 py-2 text-xs sm:text-sm md:text-base lg:text-lg"
-        >
-          WEB DEVELOPMENT
-        </p>
 
-        <p className="hover:bg-black transition duration-300 text-custom-gradient px-4 py-2 text-xs sm:text-sm md:text-base lg:text-lg">
-          FRONTEND/BACKEND
-        </p>
-      </div> */}
       <div className="container mt-6 sm:mt-8 md:mt-12 lg:mt-14  px-0 sm:px-0 md:px-18 lg:px-20">
         <div className="slider-wrapper relative">
           <button
