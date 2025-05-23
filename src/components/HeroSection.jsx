@@ -31,7 +31,7 @@ const HeroSection = () => {
       {/* <SocialIcons /> */}
       <div
         id="home"
-        className=" sm:h-screen  md:mt-24 mt-16 w-screen max-w-7xl mx-auto relative md:py-8 pt-12 px-8 md:px-24 sm:mt-20 sm:px-8 "
+        className="h-screen  md:mt-24 mt-16 w-screen max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-8 "
       >
         <div className="relative z-10 bottom-0 mt-5 sm:mt-10">
           <div className="flex items-center gap-2">
@@ -45,7 +45,7 @@ const HeroSection = () => {
             </span>
             <span className="prata-regular block md:inline">Kelvin Ewurum</span>
             <br />
-            <span className="prata-regular text-customColor text-3xl sm:text-5xl ">
+            <span className="prata-regular text-customColor text-2xl sm:text-5xl ">
               Software Developer{", "}
             </span>
             <br className="block lg:hidden" />
