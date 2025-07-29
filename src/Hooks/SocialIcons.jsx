@@ -49,7 +49,7 @@ const SocialIcons = () => {
 
       <div>
         <a
-          href="https://www.linkedin.com/in/kelvinEwurum"
+          href="https://www.linkedin.com/in/kelvinewurum"
           target="_blank"
           rel="noopener noreferrer"
         >

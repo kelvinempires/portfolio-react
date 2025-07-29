@@ -77,7 +77,7 @@ const NavBar = () => {
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
         <a
-          href="https://drive.google.com/file/d/1xv7vtcBU8RA5rfPPtSrWMgzGu3IKxVvS/view?usp=sharing"
+          href="https://docs.google.com/document/d/12wnZC7yRcg9ieE_7LE7_UtpeCRsRALZy/edit?usp=sharing&ouid=102735178967469068736&rtpof=true&sd=true"
           target="_blank"
           rel="noopener noreferrer"
           className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"

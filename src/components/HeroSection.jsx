@@ -101,7 +101,7 @@ const HeroSection = () => {
         <img
           src={heroPics1}
           alt="profile"
-          className={`absolute top-[-2.5rem] mt-10 md:mt-1 h-[530px] md:right-0 sm:mt-5 sm:right-[-90px] ml-20 sm:ml-5 mr-8 sm:mr-4 z-[-1] object-cover transition-opacity duration-500`}
+          className={`absolute bottom-0 top-0 right-[-60px] sm:right-[-20px] object-right-bottom`}
         />
       </div>
     </section>
