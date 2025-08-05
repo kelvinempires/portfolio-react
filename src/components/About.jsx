@@ -82,7 +82,7 @@ const About = () => {
         className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center"
       >
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
-          01. About Me
+          02. About Me
         </span>
         <motion.div
           className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-1/2 mx-auto"

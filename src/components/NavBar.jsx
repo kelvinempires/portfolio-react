@@ -49,8 +49,8 @@ const NavBar = () => {
   const navItems = [
     { id: "home", label: "Home", offset: -100 },
     { id: "about", label: "About", offset: -80 },
-    { id: "experience", label: "Experience", offset: -80 },
-    { id: "portfolio", label: "Work", offset: -80 },
+    { id: "experience", label: "Work", offset: -80 },
+    { id: "portfolio", label: "projects", offset: -80 },
   ];
 
   const mobileItems = [
@@ -101,7 +101,7 @@ const NavBar = () => {
       transition={{ type: "spring", damping: 25, stiffness: 500 }}
       className={`fixed w-full z-50 h-20 ${
         scrolled ? "bg-[rgb(10,25,47)] shadow-lg" : "bg-[rgba(10,25,47,0.9)]"
-      } backdrop-blur-md transition-all duration-300 border-b border-[rgba(100,255,218,0.1)]`}
+      } backdrop-blur-md transition-all duration-300 border-b border-[rgba(100,255,219,0.01)]`}
     >
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo with elegant animation */}
@@ -220,7 +220,7 @@ const NavBar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-20 left-0 right-0 bg-[rgb(10,25,47)] shadow-xl border-t border-[rgba(100,255,218,0.1)]"
+            className="md:hidden absolute top-20 left-0 right-0 bg-[rgb(10,25,47)] shadow-xl border-t border-[rgba(185,100,255,0.08)]"
           >
             <motion.div
               variants={containerVariants}
@@ -234,7 +234,7 @@ const NavBar = () => {
                   variants={itemVariants}
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-b border-[rgba(100,255,218,0.1)] last:border-0"
+                  className="border-b border-[rgba(185,100,255,0.08)] last:border-0"
                 >
                   {item.external ? (
                     <a

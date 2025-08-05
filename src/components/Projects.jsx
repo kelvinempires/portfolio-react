@@ -85,6 +85,7 @@ const Projects = () => {
     >
       {/* Floating bubbles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        
         {bubbles.map((bubble) => (
           <motion.div
             key={bubble.id}
