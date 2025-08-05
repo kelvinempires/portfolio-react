@@ -47,10 +47,10 @@ const NavBar = () => {
   }, [prevScrollPos]);
 
   const navItems = [
-    { id: "home", label: "Home", offset: -100 },
+    { id: "home", label: "Home", offset: -80 },
     { id: "about", label: "About", offset: -80 },
     { id: "experience", label: "Work", offset: -80 },
-    { id: "portfolio", label: "projects", offset: -80 },
+    { id: "projects", label: "projects", offset: -80 },
   ];
 
   const mobileItems = [

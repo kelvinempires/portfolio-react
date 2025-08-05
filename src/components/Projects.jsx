@@ -120,7 +120,7 @@ const Projects = () => {
         className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center relative z-10"
       >
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
-          03. Some Things I&apos;ve Built
+          04. Some Things I&apos;ve Built
         </span>
         <motion.div
           className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-1/2 mx-auto"
