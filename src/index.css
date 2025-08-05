@@ -133,9 +133,7 @@ p {
   scrollbar-width: none;
   overflow-x: auto;
   list-style: none;
-  /* font-size: 0; */
-  /* list-style: none; */
-  /* margin-bottom: 30px;*/
+  
 }
 
 .slider-wrapper .image-list::-webkit-scrollbar {
@@ -241,3 +239,4 @@ p {
   overflow: hidden;
   border-right: 3px solid; /* Creates the blinking cursor */
 }
+

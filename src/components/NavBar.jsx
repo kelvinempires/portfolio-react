@@ -1,185 +1,301 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faTimes,
+  faBars,
+  faDownload,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import logo from "../assets/rmv1.png";
 import { Link } from "react-scroll";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavBar = () => {
-  const [show, setShow] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [showMenu, setShowMenu] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [activeLink, setActiveLink] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      const isVisible = prevScrollPos > currentScrollPos;
+      const isVisible =
+        prevScrollPos > currentScrollPos || currentScrollPos < 50;
 
       setVisible(isVisible);
       setPrevScrollPos(currentScrollPos);
+      setScrolled(currentScrollPos > 10);
+
+      // Update active link based on scroll position
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (
+          currentScrollPos >= sectionTop - 200 &&
+          currentScrollPos < sectionTop + sectionHeight - 200
+        ) {
+          setActiveLink(section.id);
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
+  const navItems = [
+    { id: "home", label: "Home", offset: -100 },
+    { id: "about", label: "About", offset: -80 },
+    { id: "experience", label: "Experience", offset: -80 },
+    { id: "portfolio", label: "Work", offset: -80 },
+  ];
+
+  const mobileItems = [
+    ...navItems,
+    { id: "contact", label: "Contact", offset: -80 },
+    {
+      id: "resume",
+      label: "Resume",
+      offset: 0,
+      external: true,
+      url: "https://docs.google.com/document/d/12wnZC7yRcg9ieE_7LE7_UtpeCRsRALZy/edit",
+    },
+  ];
+
+  const socialLinks = [
+    { icon: faGithub, url: "https://github.com/kelvinempires" },
+    { icon: faLinkedin, url: "https://linkedin.com/in/kelvinewurum" },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+      },
+    },
+  };
+
   return (
-    <nav
-      className={`nav h-20 flex items-center justify-between px-6 md:px-16 bg-white shadow-md fixed w-full z-30 transition-transform duration-300 ${
-        visible ? "translate-y-0" : "-translate-y-full"
-      }`}
+    <motion.nav
+      initial={{ y: 0 }}
+      animate={{ y: visible ? 0 : -100 }}
+      transition={{ type: "spring", damping: 25, stiffness: 500 }}
+      className={`fixed w-full z-50 h-20 ${
+        scrolled ? "bg-[rgb(10,25,47)] shadow-lg" : "bg-[rgba(10,25,47,0.9)]"
+      } backdrop-blur-md transition-all duration-300 border-b border-[rgba(100,255,218,0.1)]`}
     >
-      <Link to="home" offset={-100} smooth={true} duration={500}>
-        <img
-          className="h-16 w-20 md:h-24 md:w-28 cursor-pointer"
-          src={logo}
-          alt="logo"
-        />
-      </Link>
-
-      <div className="hidden md:flex space-x-8">
-        <Link
-          activeClass="active"
-          to="home"
-          spy={true}
-          offset={-100}
-          smooth={true}
-          duration={500}
-          className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
+      <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+        {/* Logo with elegant animation */}
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          Home
-          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="about"
-          spy={true}
-          offset={45}
-          smooth={true}
-          duration={500}
-          className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
-        >
-          About
-          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
-        </Link>
-        <Link
-          activeClass="active"
-          to="portfolio"
-          spy={true}
-          offset={-40}
-          smooth={true}
-          duration={500}
-          className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
-        >
-          Portfolio
-          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-violet-900 scale-x-0 hover:scale-x-100 origin-left transition-transform duration-300"></span>
-        </Link>
-        <a
-          href="https://docs.google.com/document/d/12wnZC7yRcg9ieE_7LE7_UtpeCRsRALZy/edit?usp=sharing&ouid=102735178967469068736&rtpof=true&sd=true"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
-        >
-          CV
-        </a>
-      </div>
-
-      <button
-        onClick={() => {
-          document
-            .getElementById("contact")
-            .scrollIntoView({ behavior: "smooth" });
-        }}
-        className="hidden md:flex relative  items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-fuchsia-900 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-zinc-300 group"
-      >
-        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-custom-gradient-text group-hover:h-full"></span>
-        <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-purple-900" />
-        </span>
-        <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 text-zinc-400" />
-        </span>
-        <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-          Contact Me
-        </span>
-      </button>
-      {show ? (
-        <FontAwesomeIcon
-          icon={faTimes} // The "Cancel" or close icon
-          className="text-purple-900 text-3xl cursor-pointer md:hidden transition-opacity duration-300 opacity-100"
-          onClick={() => setShow(!show)} // Toggles to the menu
-        />
-      ) : (
-        <FontAwesomeIcon
-          icon={faBars} // The menu icon
-          className="text-purple-900 text-3xl cursor-pointer md:hidden transition-opacity duration-300 opacity-100"
-          onClick={() => setShow(!show)} // Toggles to the cancel
-        />
-      )}
-
-      {show && (
-        <div className="absolute top-20 left-0 min-w-full h-screen bg-customBlue shadow-md rounded-xl md:hidden flex flex-col gap-8 p-10 z-20">
           <Link
-            activeClass="active"
             to="home"
-            spy={true}
-            offset={-100}
             smooth={true}
-            duration={500}
-            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
-            onClick={() => setShow(false)}
+            duration={800}
+            className="flex items-center"
+            onClick={() => setActiveLink("home")}
           >
-            Home
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-12 w-auto transition-all duration-300 hover:opacity-90"
+            />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
+              _elvin EWurum
+            </span>
           </Link>
-          <Link
-            activeClass="active"
-            to="about"
-            spy={true}
-            offset={-50}
-            smooth={true}
-            duration={500}
-            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
-            onClick={() => setShow(false)}
-          >
-            About
-          </Link>
-          <Link
-            activeClass="active"
-            to="portfolio"
-            spy={true}
-            offset={-10}
-            smooth={true}
-            duration={500}
-            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
-            onClick={() => setShow(false)}
-          >
-            Portfolio
-          </Link>
-          <Link
-            activeClass="active"
-            to="contact"
-            spy={true}
-            offset={-30}
-            smooth={true}
-            duration={500}
-            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
-            onClick={() => setShow(false)}
-          >
-            Contact
-          </Link>
-          <a
-            href="https://drive.google.com/file/d/1xv7vtcBU8RA5rfPPtSrWMgzGu3IKxVvS/view?usp=sharing"
+        </motion.div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-1">
+          {navItems.map((item) => (
+            <motion.div
+              key={item.id}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              <Link
+                to={item.id}
+                spy={true}
+                smooth={true}
+                offset={item.offset}
+                duration={800}
+                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 ${
+                  activeLink === item.id
+                    ? "text-[#a282f9]"
+                    : "text-[#ccd6f6] hover:text-[#a282f9] hover:cursor-pointer"
+                }`}
+                onClick={() => setActiveLink(item.id)}
+              >
+                <span className="text-[#a282f9] mr-1">
+                  0{navItems.indexOf(item) + 1}.
+                </span>
+                {item.label}
+                {activeLink === item.id && (
+                  <motion.span
+                    layoutId="activeIndicator"
+                    className="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#a282f9] rounded-full"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                  />
+                )}
+              </Link>
+            </motion.div>
+          ))}
+
+          {/* Resume Link */}
+          <motion.a
+            href="https://docs.google.com/document/d/12wnZC7yRcg9ieE_7LE7_UtpeCRsRALZy/edit"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg cursor-pointer hover:text-purple-500 pb-1 border-b-2 border-transparent hover:border-b-purple-950"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center px-4 py-2 text-sm font-medium text-[#ccd6f6] hover:text-[#a282f9] transition-colors duration-300"
           >
-            CV
-          </a>
+            Resume
+            <FontAwesomeIcon icon={faDownload} className="ml-2 text-xs" />
+          </motion.a>
+
+          {/* Contact Button */}
+          <motion.button
+            whileHover={{ y: -2, backgroundColor: "rgba(100, 255, 218, 0.1)" }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400 }}
+            onClick={() => {
+              document
+                .getElementById("contact")
+                .scrollIntoView({ behavior: "smooth" });
+              setActiveLink("contact");
+            }}
+            className="ml-4 px-6 py-2 rounded-md border border-[#a282f9] text-[#a282f9] text-sm font-medium flex items-center hover:bg-[rgba(100,255,218,0.1)] transition-all duration-300"
+          >
+            <FontAwesomeIcon icon={faPhone} className="mr-2 text-xs" />
+            Contact
+          </motion.button>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Menu Button */}
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="md:hidden p-2 text-[#ccd6f6] rounded-md focus:outline-none"
+          onClick={() => setShowMenu(!showMenu)}
+          aria-label="Toggle menu"
+        >
+          <FontAwesomeIcon
+            icon={showMenu ? faTimes : faBars}
+            className="text-xl"
+          />
+        </motion.button>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {showMenu && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden absolute top-20 left-0 right-0 bg-[rgb(10,25,47)] shadow-xl border-t border-[rgba(100,255,218,0.1)]"
+          >
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-col py-4 px-6"
+            >
+              {mobileItems.map((item) => (
+                <motion.div
+                  key={item.id}
+                  variants={itemVariants}
+                  whileHover={{ x: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-b border-[rgba(100,255,218,0.1)] last:border-0"
+                >
+                  {item.external ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block py-4 text-[#ccd6f6] hover:text-[#a282f9] font-medium flex items-center"
+                      onClick={() => setShowMenu(false)}
+                    >
+                      <span className="text-[#a282f9] mr-2">
+                        0{mobileItems.indexOf(item) + 1}.
+                      </span>
+                      {item.label}
+                      {item.id === "resume" && (
+                        <FontAwesomeIcon
+                          icon={faDownload}
+                          className="ml-2 text-xs"
+                        />
+                      )}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.id}
+                      smooth={true}
+                      offset={item.offset}
+                      duration={800}
+                      className="block py-4 text-[#ccd6f6] hover:text-[#a282f9] font-medium"
+                      onClick={() => {
+                        setActiveLink(item.id);
+                        setShowMenu(false);
+                      }}
+                    >
+                      <span className="text-[#a282f9] mr-2">
+                        0{mobileItems.indexOf(item) + 1}.
+                      </span>
+                      {item.label}
+                    </Link>
+                  )}
+                </motion.div>
+              ))}
+
+              {/* Social Links */}
+              <div className="flex space-x-4 pt-6">
+                {socialLinks.map((social) => (
+                  <motion.a
+                    key={social.url}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ y: -3, color: "#64ffda" }}
+                    className="text-[#ccd6f6] text-xl"
+                  >
+                    <FontAwesomeIcon icon={social.icon} />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 

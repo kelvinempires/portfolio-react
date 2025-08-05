@@ -82,6 +82,7 @@ const portfolioItems = [
     tags: ["HTML", "CSS", "JavaScript"],
   },
 ];
+
 const Portfolio = () => {
   useEffect(() => {
     const initSlider = () => {
@@ -96,29 +97,76 @@ const Portfolio = () => {
 
       if (!imageList) return;
 
-      // Enable touch scrolling
-      let isDragging = false;
-      let startX = 0;
-      let scrollLeft = 0;
+      // Mobile touch scrolling with momentum
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      let velocity;
+      let momentumId;
+      let lastScrollTime = 0;
 
-      imageList.addEventListener("touchstart", (e) => {
-        isDragging = true;
-        startX = e.touches[0].pageX - imageList.offsetLeft;
+      const handleTouchStart = (e) => {
+        isDown = true;
+        startX = e.pageX || e.touches[0].pageX;
         scrollLeft = imageList.scrollLeft;
-      });
+        cancelMomentumTracking();
+      };
 
-      imageList.addEventListener("touchmove", (e) => {
-        if (!isDragging) return;
+      const handleTouchMove = (e) => {
+        if (!isDown) return;
         e.preventDefault();
-        const x = e.touches[0].pageX - imageList.offsetLeft;
-        const walk = (x - startX) * 2; // Adjust multiplier for faster/slower scrolling
+        const x = e.pageX || e.touches[0].pageX;
+        const walk = (x - startX) * 2; // Scroll multiplier
+
+        // Calculate velocity for momentum
+        const now = Date.now();
+        const timeDiff = now - lastScrollTime;
+        if (timeDiff > 0) {
+          velocity = (imageList.scrollLeft - (scrollLeft - walk)) / timeDiff;
+        }
+        lastScrollTime = now;
+
         imageList.scrollLeft = scrollLeft - walk;
-      });
+      };
 
-      imageList.addEventListener("touchend", () => {
-        isDragging = false;
-      });
+      const handleTouchEnd = () => {
+        isDown = false;
+        beginMomentumTracking();
+      };
 
+      const beginMomentumTracking = () => {
+        cancelMomentumTracking();
+        momentumId = requestAnimationFrame(momentumLoop);
+      };
+
+      const cancelMomentumTracking = () => {
+        cancelAnimationFrame(momentumId);
+      };
+
+      const momentumLoop = () => {
+        imageList.scrollLeft += velocity * 16; // 16ms for 60fps
+        velocity *= 0.95; // Friction
+        if (Math.abs(velocity) > 0.5) {
+          momentumId = requestAnimationFrame(momentumLoop);
+        }
+      };
+
+      // Desktop mouse events
+      imageList.addEventListener("mousedown", handleTouchStart);
+      imageList.addEventListener("mousemove", handleTouchMove);
+      imageList.addEventListener("mouseup", handleTouchEnd);
+      imageList.addEventListener("mouseleave", handleTouchEnd);
+
+      // Mobile touch events
+      imageList.addEventListener("touchstart", handleTouchStart, {
+        passive: false,
+      });
+      imageList.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
+      imageList.addEventListener("touchend", handleTouchEnd);
+
+      // Rest of slider initialization
       if (!scrollbarThumb) return;
 
       const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
@@ -131,12 +179,9 @@ const Portfolio = () => {
           sliderScrollbar.getBoundingClientRect().width -
           scrollbarThumb.offsetWidth;
 
-        // Update thumb position on mouse move
         const handleMouseMove = (e) => {
           const deltaX = e.clientX - startX;
           const newThumbPosition = thumbPosition + deltaX;
-
-          // Ensure the scrollbar thumb stays within bounds
           const boundedPosition = Math.max(
             0,
             Math.min(maxThumbPosition, newThumbPosition)
@@ -148,13 +193,11 @@ const Portfolio = () => {
           imageList.scrollLeft = scrollPosition;
         };
 
-        // Remove event listeners on mouse up
         const handleMouseUp = () => {
           document.removeEventListener("mousemove", handleMouseMove);
           document.removeEventListener("mouseup", handleMouseUp);
         };
 
-        // Add event listeners for drag interaction
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseup", handleMouseUp);
       });
@@ -190,21 +233,32 @@ const Portfolio = () => {
         scrollbarThumb.style.left = `${thumbPosition}px`;
       };
 
-      // Call these two functions when image list scrolls
       imageList.addEventListener("scroll", () => {
         updateScrollThumbPosition();
         handleSlideButtons();
       });
 
-      // Initialize button visibility
       handleSlideButtons();
+
+      // Cleanup function
+      return () => {
+        imageList.removeEventListener("mousedown", handleTouchStart);
+        imageList.removeEventListener("mousemove", handleTouchMove);
+        imageList.removeEventListener("mouseup", handleTouchEnd);
+        imageList.removeEventListener("mouseleave", handleTouchEnd);
+        imageList.removeEventListener("touchstart", handleTouchStart);
+        imageList.removeEventListener("touchmove", handleTouchMove);
+        imageList.removeEventListener("touchend", handleTouchEnd);
+        cancelMomentumTracking();
+      };
     };
 
+    const cleanup = initSlider();
     window.addEventListener("resize", initSlider);
-    initSlider(); // Initialize slider on component mount
 
     return () => {
       window.removeEventListener("resize", initSlider);
+      if (cleanup) cleanup();
     };
   }, []);
 
@@ -219,10 +273,10 @@ const Portfolio = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
         viewport={{ once: true, margin: "-50px" }}
-        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-12 text-center"
+        className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center"
       >
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
-          04. My Other Noteworthy Projects
+          04. My Other Projects
         </span>
         <motion.div
           className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-1/2 mx-auto"
@@ -243,11 +297,11 @@ const Portfolio = () => {
             <FontAwesomeIcon icon={faAngleLeft} />
           </button>
 
-          <ul className="image-list flex overflow-x-auto md:overflow-x-scroll space-x-6 pb-6 scrollbar-hide touch-pan-x">
+          <ul className="image-list flex overflow-x-auto md:overflow-x-hidden space-x-6 pb-6 scrollbar-hide touch-pan-x snap-x snap-mandatory">
             {portfolioItems.map((item, index) => (
               <motion.li
                 key={index}
-                className="image-item flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-[28rem] bg-gray-900/70 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-violet-500/30 transition-all duration-300"
+                className="image-item flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-[28rem] bg-gray-900/70 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-violet-500/30 transition-all duration-300 snap-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
