@@ -1,6 +1,6 @@
 const Rotate = () => {
   return (
-    <div className="fixed bottom-[9rem] sm:right-[-9rem] md:right-[-8rem] hidden sm:flex items-center gap-6 rotate-90">
+    <div className="fixed bottom-[9rem] sm:right-[-9rem] md:right-[-7rem] hidden sm:flex items-center gap-6 rotate-90">
       <a
         href="mailto:kelvinewurum@gmail.com"
         className="flex items-center leading-8 tracking-wide"

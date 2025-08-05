@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import Portfolio from "./components/Portfolio";
 import Rotate from "./components/Rotate1";
 import SocialRotate from "./components/SocialRotate";
+import Projects from "./components/Projects";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <HeroSection />
       <About />
       <Experience />
+      <Projects/>
       <Portfolio />
       <Contact />
       <Footer />

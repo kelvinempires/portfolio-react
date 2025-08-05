@@ -38,18 +38,56 @@ const Experience = () => {
     },
   ];
 
+  // Bubble data for the background animation
+  const bubbles = Array.from({ length: 15 }).map((_, i) => ({
+    id: i,
+    size: Math.random() * 20 + 10,
+    left: Math.random() * 100,
+    delay: Math.random() * 5,
+    duration: Math.random() * 10 + 10,
+    opacity: Math.random() * 0.2 + 0.1,
+  }));
+
   return (
     <section
       id="experience"
-      className="relative py-20 px-8 md:px-16 lg:px-24 max-w-7xl mx-auto"
+      className="relative py-20 px-8 md:px-16 lg:px-24 max-w-7xl mx-auto overflow-hidden"
     >
-      {/* Header with animated underline - Matching About section style */}
+      {/* Floating bubbles background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {bubbles.map((bubble) => (
+          <motion.div
+            key={bubble.id}
+            initial={{ bottom: -100, opacity: 0 }}
+            animate={{
+              bottom: "110%",
+              opacity: [0, bubble.opacity, 0],
+            }}
+            transition={{
+              duration: bubble.duration,
+              delay: bubble.delay,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            style={{
+              width: bubble.size,
+              height: bubble.size,
+              left: `${bubble.left}%`,
+              borderRadius: "50%",
+              background: "rgba(139, 92, 246, 0.2)",
+              position: "absolute",
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Header with animated underline */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
         viewport={{ once: true, margin: "-50px" }}
-        className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center"
+        className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center relative z-10"
       >
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
           02. Where I&apos;ve Worked
@@ -63,7 +101,7 @@ const Experience = () => {
         />
       </motion.h2>
 
-      <div className="flex flex-col lg:flex-row gap-8 mt-8">
+      <div className="flex flex-col lg:flex-row gap-8 mt-8 relative z-10">
         {/* Company tabs */}
         <div className="flex lg:flex-col overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
           {experiences.map((exp, index) => (

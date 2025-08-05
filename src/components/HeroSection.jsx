@@ -7,7 +7,20 @@ import { useMediaQuery } from "react-responsive";
 const HeroSection = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
-  // Typewriter content - mobile has shorter alternatives
+  // Color palette
+  const colors = {
+    primary: "rgb(139, 92, 246)", // violet-500
+    secondary: "rgb(124, 58, 237)", // violet-600
+    accent: "rgb(196, 181, 253)", // violet-200
+    dark: "rgb(15, 23, 42)", // gray-900
+    darker: "rgb(9, 9, 11)", // gray-950
+    text: {
+      primary: "rgb(229, 231, 235)", // gray-100
+      secondary: "rgb(156, 163, 175)", // gray-400
+    },
+  };
+
+  // Typewriter content
   const desktopRoles = [
     "React Specialist",
     "Next.js Developer",
@@ -61,7 +74,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="flex px-8 md:px-0 relative overflow-hidden">
+    <section
+      className="flex px-8 md:px-0 relative overflow-hidden"
+    
+    >
       <div
         id="home"
         className="h-screen flex flex-col justify-center max-w-7xl mx-auto"
@@ -74,39 +90,62 @@ const HeroSection = () => {
         >
           {/* Greeting line */}
           <motion.div variants={item} className="flex items-center gap-2 mb-1">
-            <div className="w-8 md:w-12 h-[2px] bg-[#414141]"></div>
-            <p className="font-medium md:text-base text-gray-300">Hello</p>
+            <div
+              className="w-8 md:w-12 h-[2px]"
+              style={{ backgroundColor: colors.text.secondary }}
+            ></div>
+            <p
+              className="font-medium md:text-base"
+              style={{ color: colors.text.secondary }}
+            >
+              Hello
+            </p>
           </motion.div>
 
-          {/* Name and Title - Fixed layout */}
+          {/* Name and Title */}
           <motion.div variants={floating} animate="animate" className="mb-4">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white">
-              <span className="prata-regular text-purple-400">I&apos;m </span>
+            <h1
+              className="text-5xl sm:text-6xl md:text-7xl font-bold"
+              style={{ color: colors.text.primary }}
+            >
+              <span className="prata-regular" style={{ color: colors.primary }}>
+                I&apos;m{" "}
+              </span>
               <span className="prata-regular">Kelvin Ewurum</span>
             </h1>
 
             <div className="flex flex-wrap items-baseline mt-2">
-              <h2 className="prata-regular text-purple-400 text-3xl sm:text-5xl mr-2">
+              <h2
+                className="prata-regular text-3xl sm:text-5xl mr-2"
+                style={{ color: colors.primary }}
+              >
                 {isMobile ? "Dev," : "Developer,"}
               </h2>
-              <div className="font-playfair text-white text-2xl sm:text-5xl min-w-[200px]">
+              <div
+                className="font-playfair text-2xl sm:text-5xl min-w-[200px]"
+                style={{ color: colors.text.primary }}
+              >
                 {text}
-                <Cursor cursorColor="#9333ea" cursorStyle="|" />
+                <Cursor cursorColor={colors.primary} cursorStyle="|" />
               </div>
             </div>
           </motion.div>
 
-          {/* Personalized Description */}
+          {/* Description */}
           <motion.div
             variants={item}
-            className="max-w-2xl text-gray-300 mt-6 mb-8"
+            className="max-w-2xl mt-6 mb-8"
+            style={{ color: colors.text.secondary }}
           >
             <p className="text-lg leading-relaxed">
               I build exceptional digital experiences with modern web
               technologies. Passionate about clean code, intuitive interfaces,
               and scalable architecture. Currently specializing in React,
               Next.js, and full-stack JavaScript solutions.
-              <span className="inline-block align-middle ml-3 w-8 h-[2px] bg-[#414141]"></span>
+              <span
+                className="inline-block align-middle ml-3 w-8 h-[2px]"
+                style={{ backgroundColor: colors.text.secondary }}
+              ></span>
             </p>
           </motion.div>
 
@@ -121,13 +160,13 @@ const HeroSection = () => {
               }
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 15px rgba(147, 51, 234, 0.5)",
+                boxShadow: `0 0 15px ${colors.primary}80`,
               }}
               whileTap={{ scale: 0.98 }}
-              className="mt-4 py-3 px-8 rounded-full text-white font-medium relative overflow-hidden group"
+              className="mt-4 py-3 px-8 rounded-full font-medium relative overflow-hidden group"
               style={{
-                background:
-                  "linear-gradient(45deg, rgb(169, 50, 210), rgb(110, 50, 207), rgb(57, 50, 187))",
+                background: `linear-gradient(45deg, ${colors.secondary}, ${colors.primary})`,
+                color: colors.text.primary,
               }}
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -142,12 +181,12 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Floating background elements (optimized 3-bubble version) */}
+        {/* Floating bubbles */}
         {!isMobile && (
           <>
-            {/* Primary bubble (largest) */}
             <motion.div
-              className="absolute right-20 top-1/4 w-3 h-3 rounded-full bg-purple-400 opacity-20 pointer-events-none"
+              className="absolute right-20 top-1/4 w-3 h-3 rounded-full pointer-events-none"
+              style={{ backgroundColor: colors.primary, opacity: 0.2 }}
               animate={{
                 y: [0, -25, 0],
                 x: [0, 15, 0],
@@ -158,10 +197,9 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             />
-
-            {/* Secondary bubble (medium) */}
             <motion.div
-              className="absolute left-10 top-1/3 w-2 h-2 rounded-full bg-white opacity-15 pointer-events-none"
+              className="absolute left-10 top-1/3 w-2 h-2 rounded-full pointer-events-none"
+              style={{ backgroundColor: colors.accent, opacity: 0.15 }}
               animate={{
                 y: [0, -20, 0],
                 x: [0, -8, 0],
@@ -173,10 +211,9 @@ const HeroSection = () => {
                 delay: 1,
               }}
             />
-
-            {/* Tertiary bubble (smallest) */}
             <motion.div
-              className="absolute right-1/4 bottom-1/3 w-1.5 h-1.5 rounded-full bg-purple-300 opacity-15 pointer-events-none"
+              className="absolute right-1/4 bottom-1/3 w-1.5 h-1.5 rounded-full pointer-events-none"
+              style={{ backgroundColor: colors.primary, opacity: 0.15 }}
               animate={{
                 y: [0, -15, 0],
                 x: [0, 10, 0],

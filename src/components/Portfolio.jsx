@@ -1,24 +1,14 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleLeft,
   faAngleRight,
-  faPlayCircle,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { FaGithub } from "react-icons/fa";
 
-// import gallery from "../assets/mygallery.png";
-// import harvest from "../assets/harvest.png";
-// import perfume from "../assets/perfume.png";
-// import heroSection from "../assets/landingpage.png";
-
-// import qrCode from "../assets/qrCode.png";
-// import card from "../assets/c.png";
-// import shoe from "../assets/shoe.png";
-// import fly from "../assets/fly.png";
-// import flex from "../assets/flex.png";
-// import jumia from "../assets/jumia.png";
-// import image1 from "../assets/image1.png";
-// import form from "../assets/form.png";
+// Import your images
 import joel from "../assets/joel.png";
 import weather from "../assets/weather.png";
 import portfolio from "../assets/portfolio.png";
@@ -27,101 +17,71 @@ import ecoms from "../assets/ecoms.png";
 import chat from "../assets/chat.png";
 import peepMusic from "../assets/pmusic.png";
 
-
 const portfolioItems = [
   {
     title: "E-commerce website",
-    description: "complete e-commerce website with Admin page",
+    description: "Complete e-commerce website with Admin page",
     url: "https://joel-hair.vercel.app",
     mediaType: "image",
     mediaSrc: joel,
     githubCode: "https://github.com/kelvinempires/joe-hair.git",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
   },
   {
     title: "peepPluse",
-    description: "Twitter-like peepPluse social media platform.",
+    description: "Twitter-like social media platform",
     url: "https://peeppluse.onrender.com",
     mediaType: "image",
     mediaSrc: peepPluse,
     githubCode: "https://github.com/kelvinempires/PeepPluse-.git",
+    tags: ["React", "Express", "MongoDB", "Socket.io"],
   },
   {
     title: "peepMusic",
-    description: "Advanced peepMusic streaming platform.",
+    description: "Advanced music streaming platform",
     url: "https://peepmusic.onrender.com",
     mediaType: "image",
     mediaSrc: peepMusic,
     githubCode: "https://github.com/kelvinempires/peepMusic.git",
+    tags: ["React", "Node.js", "MongoDB", "Audio API"],
   },
   {
-    title: "E-Commerce Website Design",
-    description: "premium and responsive E-commerce website Design",
+    title: "E-Commerce Design",
+    description: "Premium responsive E-commerce website Design",
     url: "https://kelvinempires.github.io/e-commarce/",
     mediaType: "image",
     mediaSrc: ecoms,
     githubCode: "https://github.com/kelvinempires/e-commarce.git",
+    tags: ["HTML", "CSS", "JavaScript"],
   },
   {
-    title: "chat App",
-    description: "real time chatting App with smooth responsive design",
+    title: "Chat App",
+    description: "Real time chatting App with smooth responsive design",
     url: "https://mern-chat-app-fgme.onrender.com",
     mediaType: "image",
     mediaSrc: chat,
     githubCode: "https://github.com/kelvinempires/chatapp.git",
+    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
   },
   {
     title: "Weather App",
-    description: "keep track of the weather from wherever you are.. ",
+    description: "Keep track of the weather from wherever you are",
     url: "https://kelvinempires.github.io/weather--app/",
     mediaType: "image",
     mediaSrc: weather,
     githubCode: "https://github.com/kelvinempires/weather--app.git",
+    tags: ["JavaScript", "API", "CSS"],
   },
   {
-    title: "portfolio",
-    description: "portfolio showcasing diverse projects",
+    title: "Portfolio",
+    description: "Portfolio showcasing diverse projects",
     url: "https://kelvinempires.github.io/portfolio-tailwind/",
     mediaType: "image",
     mediaSrc: portfolio,
     githubCode: "https://github.com/kelvinempires/portfolio-tailwind.git",
+    tags: ["HTML", "CSS", "JavaScript"],
   },
-
-
-  //   title: "Form",
-  //   description: "non-responsive form with suboptimal navigation.",
-  //   url: "https://kelvinempires.github.io/form/",
-  //   mediaType: "image",
-  //   mediaSrc: form,
-  //   githubCode: "https://github.com/kelvinempires/form.git",
-  // },
-  // {
-  //   title: "HarvestGrove",
-  //   description: "Beginner-friendly web page with clear and clean design. ",
-  //   url: "https://kelvinempires.github.io/harvestGrove/ ",
-  //   mediaType: "image",
-  //   mediaSrc: harvest,
-  //   githubCode: "https://github.com/kelvinempires/harvestGrove.git",
-  // },
-
-  //   title: "Qr-code",
-  //   description: "Qr-code  project with basic technologies",
-  //   url: "https://kelvinempires.github.io/qr-code/",
-  //   mediaType: "image",
-  //   mediaSrc: qrCode,
-  //   githubCode: "https://github.com/kelvinempires/qr-code.git",
-  // },
-  
-  // {
-  //   title: "Banking App",
-  //   description: "(under-deployment....) real-time banking App.....",
-  //   url: "https://example.com/full-stack-project",
-  //   mediaType: "image",
-  //   mediaSrc: harvest,
-  //   githubCode: "https://github.com/kelvinempires/peepBank.git",
-  // },
-  // Add more portfolio items here
 ];
-
 const Portfolio = () => {
   useEffect(() => {
     const initSlider = () => {
@@ -132,7 +92,35 @@ const Portfolio = () => {
       const sliderScrollbar = document.querySelector(
         ".container .slider-scrollbar"
       );
-      const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+      const scrollbarThumb = sliderScrollbar?.querySelector(".scrollbar-thumb");
+
+      if (!imageList) return;
+
+      // Enable touch scrolling
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      imageList.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - imageList.offsetLeft;
+        scrollLeft = imageList.scrollLeft;
+      });
+
+      imageList.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - imageList.offsetLeft;
+        const walk = (x - startX) * 2; // Adjust multiplier for faster/slower scrolling
+        imageList.scrollLeft = scrollLeft - walk;
+      });
+
+      imageList.addEventListener("touchend", () => {
+        isDragging = false;
+      });
+
+      if (!scrollbarThumb) return;
+
       const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
       // Handle scrollbar thumb drag
@@ -182,133 +170,170 @@ const Portfolio = () => {
 
       // Show or hide slide buttons based on scroll position
       const handleSlideButtons = () => {
-        slideButtons[0].style.display =
-          imageList.scrollLeft <= 0 ? "none" : "flex";
-        slideButtons[1].style.display =
-          imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+        if (slideButtons[0]) {
+          slideButtons[0].style.display =
+            imageList.scrollLeft <= 0 ? "none" : "flex";
+        }
+        if (slideButtons[1]) {
+          slideButtons[1].style.display =
+            imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+        }
       };
 
       // Update scrollbar thumb position based on image scroll
       const updateScrollThumbPosition = () => {
+        if (!sliderScrollbar || !scrollbarThumb) return;
         const scrollPosition = imageList.scrollLeft;
         const thumbPosition =
           (scrollPosition / maxScrollLeft) *
           (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
         scrollbarThumb.style.left = `${thumbPosition}px`;
       };
+
       // Call these two functions when image list scrolls
       imageList.addEventListener("scroll", () => {
         updateScrollThumbPosition();
         handleSlideButtons();
       });
+
+      // Initialize button visibility
+      handleSlideButtons();
     };
 
     window.addEventListener("resize", initSlider);
-    window.addEventListener("load", initSlider);
     initSlider(); // Initialize slider on component mount
 
     return () => {
       window.removeEventListener("resize", initSlider);
-      window.removeEventListener("load", initSlider);
     };
   }, []);
 
   return (
-    <main id="portfolio" className="p-4 sm:p-6 md:p-0 lg:p-0">
-      <div className="border-b-2 m-4 md:m-20 lg:m-16">
-        <h1 className="font-playfair text-center text-zinc-700 dark:text-zinc-300 font-serif font-bold text-2xl sm:text-3xl md:text-4xl px-4 py-8 tracking-tight leading-tight">
-          Explore the projects I&apos;ve built with creativity and code
-        </h1>
-      </div>
+    <section
+      id="portfolio"
+      className="relative py-20 px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 max-w-8xl mx-auto overflow-hidden"
+    >
+      {/* Title with matching style */}
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        viewport={{ once: true, margin: "-50px" }}
+        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-12 text-center"
+      >
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
+          04. My Other Noteworthy Projects
+        </span>
+        <motion.div
+          className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-1/2 mx-auto"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+      </motion.h2>
 
-      <div className="container mt-6 sm:mt-8 md:mt-12 lg:mt-14  px-0 sm:px-0 md:px-18 lg:px-20">
+      <div className="container mt-12 px-0 sm:px-0 md:px-4 lg:px-4">
         <div className="slider-wrapper relative">
           <button
             id="prev-slide"
-            className="slide-button material-symbols-rounded"
+            className="slide-button material-symbols-rounded absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800/50 backdrop-blur-sm text-white p-3 rounded-full z-10 hover:bg-violet-600 transition-colors duration-300 hidden md:flex"
             aria-label="Previous Slide"
           >
             <FontAwesomeIcon icon={faAngleLeft} />
           </button>
-          <ul className="image-list flex overflow-x-scroll space-x-4">
+
+          <ul className="image-list flex overflow-x-auto md:overflow-x-scroll space-x-6 pb-6 scrollbar-hide touch-pan-x">
             {portfolioItems.map((item, index) => (
-              <li key={index} className="image-item flex-shrink-0">
-                <div className="bg-gray-800 text-center p-2 rounded-md relative group  hover:bg-gray-900 transition duration-300">
-                  <p className="text-xs sm:text-sm font-semibold pt-2 custom-gradient-text">
-                    {item.title}
-                  </p>
-                  <h1 className="px-5 pb-5 font-semibold text-xs sm:text-sm md:text-base lg:text-lg fixed-size-description">
-                    {item.description}
-                  </h1>
+              <motion.li
+                key={index}
+                className="image-item flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-[28rem] bg-gray-900/70 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-violet-500/30 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative group h-full flex flex-col">
                   <a
                     target="_blank"
-                    referrerPolicy="no-referrer"
+                    rel="noopener noreferrer"
                     href={item.url}
-                    className="relative block"
+                    className="block flex-grow"
                   >
-                    {item.mediaType === "video" ? (
-                      <video
-                        className="h-36 w-96 px-5 sm:px-5 md:px-5 lg:px-5 hover:h-36 hover:w-105 hover:px-2 transition-all duration-500 transform group-hover:scale-105"
-                        src={item.mediaSrc}
-                        height="300"
-                        width="300"
-                        autoPlay
-                        loop
-                      ></video>
-                    ) : (
+                    <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 z-10">
+                        <div>
+                          <h3 className="text-white text-xl font-bold">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-300 text-sm">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
                       <img
-                        className="h-36 w-96 px-5 sm:px-5 md:px-5 lg:px-5 hover:h-36 hover:w-105 hover:px-2 transition-all duration-500 transform group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         src={item.mediaSrc}
-                        height="200"
-                        width="300"
-                        alt="Project Screenshot"
-                      />
-                    )}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <FontAwesomeIcon
-                        icon={faPlayCircle}
-                        className="text-white text-4xl"
+                        alt={item.title}
+                        loading="lazy"
                       />
                     </div>
                   </a>
+
+                  <div className="p-4">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {item.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="text-xs font-mono text-gray-400 px-2 py-1 bg-gray-800/50 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex justify-between">
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-gray-400 hover:text-violet-400 transition-colors"
+                      >
+                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                        Live Demo
+                      </a>
+                      <a
+                        href={item.githubCode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-gray-400 hover:text-violet-400 transition-colors"
+                      >
+                        <FaGithub />
+                        View Code
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex justify-center space-x-4 mt-4">
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-800 text-white py-2 px-4 rounded transition duration-300 hover:bg-blue-500 hover:text-white"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href={item.githubCode}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-800 text-white py-2 px-4 rounded transition duration-300 hover:bg-blue-500 hover:text-white"
-                  >
-                    GitHub Code
-                  </a>
-                </div>
-              </li>
+              </motion.li>
             ))}
           </ul>
+
           <button
             id="next-slide"
-            className="slide-button material-symbols-rounded"
+            className="slide-button material-symbols-rounded absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800/50 backdrop-blur-sm text-white p-3 rounded-full z-10 hover:bg-violet-600 transition-colors duration-300 hidden md:flex"
             aria-label="Next Slide"
           >
             <FontAwesomeIcon icon={faAngleRight} />
           </button>
         </div>
-        <div className="slider-scrollbar mt-0">
-          <div className="scrollbar-track bg-gray-300 rounded-full">
-            <div className="scrollbar-thumb bg-black rounded-full"></div>
+
+        <div className="slider-scrollbar mt-6 hidden md:block">
+          <div className="scrollbar-track bg-gray-700/50 h-1.5 rounded-full">
+            <div className="scrollbar-thumb bg-violet-500 h-1.5 rounded-full hover:bg-violet-400 transition-colors"></div>
           </div>
         </div>
-        <div className="flex justify-center pt-8"></div>
       </div>
-    </main>
+    </section>
   );
 };
 
