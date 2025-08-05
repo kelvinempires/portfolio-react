@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
-import heroPics1 from "../assets/kelvin.png";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 
@@ -28,10 +27,9 @@ const HeroSection = () => {
 
   return (
     <section className="flex">
-      {/* <SocialIcons /> */}
       <div
         id="home"
-        className="h-screen  md:mt-24 mt-16 w-screen max-w-7xl mx-auto overflow-hidden relative md:py-8 py-12 px-8 md:px-24   sm:mt-20 sm:px-8 "
+        className="h-screen flex flex-col items-center justify-center  max-w-7xl mx-auto "
       >
         <div className="relative z-10 bottom-0 mt-5 sm:mt-10">
           <div className="flex items-center gap-2">
@@ -98,11 +96,6 @@ const HeroSection = () => {
             </a>
           </button>
         </div>
-        <img
-          src={heroPics1}
-          alt="profile"
-          className={`absolute bottom-0 top-0 right-[-60px] sm:right-[-20px] object-right-bottom`}
-        />
       </div>
     </section>
   );
