@@ -61,7 +61,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="flex px-6 md:px-0 relative overflow-hidden">
+    <section className="flex px-8 md:px-0 relative overflow-hidden">
       <div
         id="home"
         className="h-screen flex flex-col justify-center max-w-7xl mx-auto"

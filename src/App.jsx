@@ -4,6 +4,7 @@ import CustomCursor from "./components/CustomCursor";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import NavBar from "./components/NavBar";
+import Experience from "./components/Experience";
 import Portfolio from "./components/Portfolio";
 import Rotate from "./components/Rotate1";
 import SocialRotate from "./components/SocialRotate";
@@ -16,6 +17,7 @@ export default function App() {
       <CustomCursor />
       <HeroSection />
       <About />
+      <Experience />
       <Portfolio />
       <Contact />
       <Footer />
