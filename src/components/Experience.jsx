@@ -51,7 +51,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative py-20 px-8 md:px-16 lg:px-24 max-w-7xl mx-auto overflow-hidden"
+      className="relative py-20 px-8 sm:px-16 md:px-24 lg:px-24 max-w-7xl mx-auto overflow-hidden"
     >
       {/* Floating bubbles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
