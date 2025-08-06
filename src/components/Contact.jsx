@@ -45,7 +45,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 max-w-8xl mx-auto"
+      className="relative py-20 px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 max-w-8xl mx-auto    "
     >
       {/* Updated Title Section */}
       <div className="text-center mb-16">

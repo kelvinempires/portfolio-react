@@ -122,7 +122,7 @@ const NavBar = () => {
               alt="Logo"
               className="h-12 w-auto transition-all duration-300 hover:opacity-90"
             />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
+            <span className="text-transparent text-xl  hover:cursor-pointer bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
               _elvin Ewurum
             </span>
           </Link>
