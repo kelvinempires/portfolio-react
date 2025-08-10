@@ -107,7 +107,7 @@ const About = () => {
           }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <div className="text-gray-300 space-y-6">
+          <div className="text-xs sm:text-sm md:text-base text-gray-300 space-y-6">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -181,9 +181,13 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <h4 className="text-lg text-violet-300">{edu.institution}</h4>
-                  <p className="text-sm text-gray-400">{edu.location}</p>
+                  <p className=" text-xs sm:text-sm md:text-base text-gray-400">
+                    {edu.location}
+                  </p>
                   {edu.degree && (
-                    <p className="text-gray-300 mt-1">{edu.degree}</p>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300 mt-1">
+                      {edu.degree}
+                    </p>
                   )}
                   {edu.certifications && (
                     <ul className="mt-1 space-y-1">

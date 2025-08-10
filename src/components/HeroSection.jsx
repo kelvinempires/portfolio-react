@@ -74,10 +74,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section
-      className="flex px-8 md:px-0 relative overflow-hidden"
-    
-    >
+    <section className="flex px-8 md:px-0 mt-6 relative overflow-hidden">
       <div
         id="home"
         className="h-screen flex flex-col justify-center max-w-7xl mx-auto"
@@ -91,11 +88,11 @@ const HeroSection = () => {
           {/* Greeting line */}
           <motion.div variants={item} className="flex items-center gap-2 mb-1">
             <div
-              className="w-8 md:w-12 h-[2px]"
+              className="w-8 md:w-12 h-[2px] mb-2"
               style={{ backgroundColor: colors.text.secondary }}
             ></div>
             <p
-              className="font-medium md:text-base"
+              className="font-medium md:text-base pb-2"
               style={{ color: colors.text.secondary }}
             >
               Hello
@@ -105,7 +102,7 @@ const HeroSection = () => {
           {/* Name and Title */}
           <motion.div variants={floating} animate="animate" className="mb-4">
             <h1
-              className="text-5xl sm:text-6xl md:text-7xl font-bold"
+              className="text-4xl sm:text-6xl md:text-7xl font-bold"
               style={{ color: colors.text.primary }}
             >
               <span className="prata-regular" style={{ color: colors.primary }}>
@@ -137,7 +134,7 @@ const HeroSection = () => {
             className="max-w-2xl mt-6 mb-8"
             style={{ color: colors.text.secondary }}
           >
-            <p className="text-lg leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base leading-relaxed">
               I build exceptional digital experiences with modern web
               technologies. Passionate about clean code, intuitive interfaces,
               and scalable architecture. Currently specializing in React,

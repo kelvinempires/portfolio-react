@@ -83,7 +83,7 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="min-h-screen  text-white px-4 sm:px-16 md:px-24 lg:px-24"
+      className="min-h-screen  text-white px-6 sm:px-16 md:px-24 lg:px-24"
     >
       <div className="max-w-6xl mx-auto">
         <motion.h2
@@ -124,7 +124,9 @@ const Portfolio = () => {
                 <h3 className="text-xl font-semibold text-white">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-sm">{item.description}</p>
+                <p className="text-xs sm:text-sm text-gray-400">
+                  {item.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map((tag, idx) => (

@@ -51,7 +51,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative py-20 px-8 sm:px-16 md:px-24 lg:px-24 max-w-7xl mx-auto overflow-hidden"
+      className="relative py-16 px-6 sm:px-8 md:px-16 lg:px-24 max-w-7xl mx-auto overflow-hidden"
     >
       {/* Floating bubbles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -87,13 +87,13 @@ const Experience = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
         viewport={{ once: true, margin: "-50px" }}
-        className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center relative z-10"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 text-center relative z-10"
       >
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
           03. Where I&apos;ve Worked
         </span>
         <motion.div
-          className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-1/2 mx-auto"
+          className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-3/4 sm:w-1/2 mx-auto"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -101,22 +101,24 @@ const Experience = () => {
         />
       </motion.h2>
 
-      <div className="flex flex-col lg:flex-row gap-8 mt-8 relative z-10">
-        {/* Company tabs */}
-        <div className="flex lg:flex-col overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
-          {experiences.map((exp, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveTab(index)}
-              className={`px-4 py-2 text-left border-b-2 lg:border-l-2 lg:border-b-0 border-gray-700 whitespace-nowrap transition-colors ${
-                activeTab === index
-                  ? "border-purple-400 text-purple-400"
-                  : "text-gray-400 hover:text-gray-300 hover:border-gray-600"
-              }`}
-            >
-              {exp.company}
-            </button>
-          ))}
+      <div className="flex flex-col lg:flex-row gap-6 relative z-10">
+        {/* Company tabs - horizontal scroll on mobile */}
+        <div className="flex lg:flex-col overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide">
+          <div className="flex lg:flex-col min-w-fit lg:min-w-[200px]">
+            {experiences.map((exp, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className={`px-4 py-3 text-sm sm:text-base text-left border-b-2 lg:border-l-2 lg:border-b-0 border-gray-700 whitespace-nowrap transition-colors ${
+                  activeTab === index
+                    ? "border-purple-400 text-purple-400"
+                    : "text-gray-400 hover:text-gray-300 hover:border-gray-600"
+                }`}
+              >
+                {exp.company}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Experience details */}
@@ -130,20 +132,20 @@ const Experience = () => {
             damping: 10,
             duration: 0.5,
           }}
-          className="flex-1"
+          className="flex-1 min-w-0"
         >
           <div className="text-gray-300">
-            <h3 className="text-xl font-semibold text-white">
+            <h3 className="text-lg sm:text-xl font-semibold text-white">
               {experiences[activeTab].role}{" "}
               <span className="text-purple-400">
                 @ {experiences[activeTab].company}
               </span>
             </h3>
-            <p className="text-sm text-gray-400 mb-6">
+            <p className="text-xs sm:text-sm text-gray-400 mb-4">
               {experiences[activeTab].period}
             </p>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               {experiences[activeTab].description.map((item, index) => (
                 <motion.li
                   key={index}
@@ -154,10 +156,12 @@ const Experience = () => {
                     type: "spring",
                     stiffness: 200,
                   }}
-                  className="flex items-start"
+                  className="flex items-start text-sm sm:text-base"
                 >
-                  <span className="text-purple-400 mr-3 mt-1">▹</span>
-                  <span>{item}</span>
+                  <span className="text-purple-400 mr-2 mt-1 min-w-[16px]">
+                    ▹
+                  </span>
+                  <span className="text-xs sm:text-sm md:text-base text-gray-400">{item}</span>
                 </motion.li>
               ))}
             </ul>

@@ -45,7 +45,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 max-w-8xl mx-auto    "
+      className="relative py-20 px-6 sm:px-8 md:px-12 lg:px-24 xl:px-32 max-w-8xl mx-auto    "
     >
       {/* Updated Title Section */}
       <div className="text-center mb-16">
@@ -78,7 +78,7 @@ const Contact = () => {
           <form className="space-y-6" ref={form} onSubmit={sendEmail}>
             <input
               type="text"
-              className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
+              className="text-xs sm:text-sm md:text-base text-gray-400 w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
               placeholder="Your Name"
               name="your_name"
               required
@@ -86,14 +86,14 @@ const Contact = () => {
 
             <input
               type="email"
-              className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
+              className="text-xs sm:text-sm md:text-base text-gray-400 w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
               placeholder="Your Email"
               name="your_email"
               required
             />
 
             <textarea
-              className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
+              className="text-xs sm:text-sm md:text-base text-gray-400 w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
               name="message"
               rows="5"
               placeholder="Your Message"
@@ -141,7 +141,7 @@ const Contact = () => {
               ) : (
                 <span className="w-full relative inline-flex items-center justify-start px-7 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group">
                   <span className="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                  <span className="relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
+                  <span className="text-xs sm:text-sm md:text-base  relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
                     Submit Message
                   </span>
                 </span>
@@ -151,11 +151,11 @@ const Contact = () => {
 
           <ToastContainer />
 
-          <h3 className="prata-regular text-2xl font-semibold mt-12 mb-6 text-zinc-400">
+          <h3 className="prata-regular text-xs sm:text-sm md:text-base font-semibold mt-4 mb-6 text-zinc-400">
             Would love to hear from you
           </h3>
 
-          <div className="social-icons flex space-x-4 mb-6">
+          <div className="social-icons flex space-x-4">
             <a
               href="https://twitter.com/kelvinEwurum"
               target="_blank"

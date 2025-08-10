@@ -85,7 +85,6 @@ const Projects = () => {
     >
       {/* Floating bubbles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        
         {bubbles.map((bubble) => (
           <motion.div
             key={bubble.id}
@@ -186,10 +185,12 @@ const Projects = () => {
                 }`}
                 style={{ maxWidth: "550px" }}
               >
-                <p className="text-gray-300 mb-4">{project.description}</p>
+                <p className="text-xs sm:text-sm md:text-base text-gray-400 mb-4">
+                  {project.description}
+                </p>
 
                 {/* Achievement Metrics */}
-                <ul className="space-y-2 text-sm text-violet-300">
+                <ul className="space-y-2 text-xs sm:text-sm text-violet-300">
                   {project.metrics.map((metric, i) => (
                     <li key={i} className="flex items-center">
                       <span className="mr-2">▹</span>

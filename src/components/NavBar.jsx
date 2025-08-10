@@ -159,7 +159,7 @@ const NavBar = () => {
                     layoutId="activeIndicator"
                     className="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#a282f9] rounded-full"
                     initial={false}
-                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    transition={{ type: "spring", stiffness: 150, damping: 30,  }}
                   />
                 )}
               </Link>
