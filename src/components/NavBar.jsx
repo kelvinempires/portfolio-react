@@ -154,14 +154,14 @@ const NavBar = () => {
                   0{navItems.indexOf(item) + 1}.
                 </span>
                 {item.label}
-                {activeLink === item.id && (
+                {/* {activeLink === item.id && (
                   <motion.span
                     layoutId="activeIndicator"
                     className="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#a282f9] rounded-full"
                     initial={false}
                     transition={{ type: "spring", stiffness: 150, damping: 30,  }}
                   />
-                )}
+                )} */}
               </Link>
             </motion.div>
           ))}
