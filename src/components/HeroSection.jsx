@@ -27,6 +27,7 @@ const HeroSection = () => {
     "Full-Stack Engineer",
     "TypeScript Expert",
     "Node.js Developer",
+    "Product Manager",
   ];
 
   const mobileRoles = [
@@ -35,6 +36,7 @@ const HeroSection = () => {
     "Full-Stack",
     "TypeScript",
     "Node.js",
+    "Product Manager",
   ];
 
   const [text] = useTypewriter({
