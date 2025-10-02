@@ -61,7 +61,7 @@ const NavBar = () => {
       label: "Resume",
       offset: 0,
       external: true,
-      url: "https://docs.google.com/document/d/12wnZC7yRcg9ieE_7LE7_UtpeCRsRALZy/edit",
+      url: "https://eu.docworkspace.com/d/sIOGV2JeiAdP2-8YG?sa=601.1037",
     },
   ];
 
@@ -168,7 +168,7 @@ const NavBar = () => {
 
           {/* Resume Link */}
           <motion.a
-            href="https://docs.google.com/document/d/12wnZC7yRcg9ieE_7LE7_UtpeCRsRALZy/edit"
+            href="https://eu.docworkspace.com/d/sIOGV2JeiAdP2-8YG?sa=601.1037"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ y: -2 }}
