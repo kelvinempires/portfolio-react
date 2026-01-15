@@ -22,18 +22,21 @@ const HeroSection = () => {
 
   // Typewriter content
   const desktopRoles = [
+    "Frontend Developer",
     "React Specialist",
     "Next.js Developer",
-    "Full-Stack Engineer",
+    "JavaScript Expert",
     "TypeScript Expert",
     "Node.js Developer",
     "Product Manager",
+    "Full-Stack Engineer",
   ];
 
   const mobileRoles = [
     "React Dev",
     "Next.js",
     "Full-Stack",
+    "JavaScript",
     "TypeScript",
     "Node.js",
     "Product Manager",

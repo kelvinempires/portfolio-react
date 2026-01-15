@@ -8,7 +8,7 @@ const Experience = () => {
     {
       company: "vynixLabs",
       role: "Frontend Developer",
-      period: "2025 - Present",
+      period: "2025 - nov 2025",
       description: [
         "Developed blockchain and Web3 applications using modern frameworks",
         "Implemented monorepo architecture for scalable project structures",
