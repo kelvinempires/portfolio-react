@@ -102,9 +102,7 @@ const NavBar = () => {
       transition={{ type: "spring", damping: 25, stiffness: 500 }}
       className={`fixed w-full z-50 h-20 backdrop-blur-md transition-all duration-300 border-b border-[var(--border-light)]`}
       style={{
-        background: scrolled
-          ? "var(--nav-bg)"
-          : "rgba(var(--bg-rgb),0.9)", // optional for transparency if you define --bg-rgb: 10,25,47;
+        background: scrolled ? "var(--nav-bg)" : "rgba(var(--bg-rgb),0.9)", // optional for transparency if you define --bg-rgb: 10,25,47;
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
@@ -127,7 +125,10 @@ const NavBar = () => {
               className="h-12 w-auto transition-all duration-300 hover:opacity-90"
             />
             <span className="text-transparent text-xl hover:cursor-pointer bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)]">
-              _elvin Ewurum
+              _elvin
+            </span>
+            <span className="text-transparent text-xl hover:cursor-pointer bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)] display-name hidden sm:inline">
+              _Ewurum
             </span>
           </Link>
         </motion.div>
@@ -205,12 +206,14 @@ const NavBar = () => {
           onClick={() => setShowMenu(!showMenu)}
           aria-label="Toggle menu"
         >
-          <div className="flex items-center justify-between gap-2"> <ThemeSwitcher />
-          <FontAwesomeIcon
-            icon={showMenu ? faTimes : faBars}
-            className="text-xl"
-          /></div>
-         
+          <div className="flex items-center justify-between gap-2">
+            {" "}
+            <ThemeSwitcher />
+            <FontAwesomeIcon
+              icon={showMenu ? faTimes : faBars}
+              className="text-xl"
+            />
+          </div>
         </motion.button>
       </div>
 
@@ -279,7 +282,7 @@ const NavBar = () => {
               ))}
 
               {/* Social Links */}
-              
+
               <div className="flex space-x-4 pt-6">
                 {socialLinks.map((social) => (
                   <motion.a
