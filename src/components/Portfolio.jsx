@@ -83,7 +83,7 @@ const Portfolio = () => {
       className="min-h-screen px-6 sm:px-16 md:px-24"
     >
       <div className="max-w-6xl mx-auto">
-        <SectionHeader number="04.2" title="More Made by Me" />
+        <SectionHeader number="04" title="Some Things I've Built" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {portfolioItems.map((item, index) => (

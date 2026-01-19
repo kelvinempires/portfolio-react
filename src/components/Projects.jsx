@@ -109,7 +109,7 @@ const Projects = () => {
         ))}
       </div>
 
-      <SectionHeader number="04" title="Some Things I've Built" />
+      <SectionHeader number="04. ii" title="Featured On Going Projects" />
 
       <div className="space-y-28 relative z-10">
         {projects.map((project, index) => {

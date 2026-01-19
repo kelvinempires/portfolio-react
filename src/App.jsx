@@ -26,8 +26,8 @@ export default function App() {
         <HeroSection />
         <About />
         <Experience />
-        <Projects />
         <Portfolio />
+        <Projects />
         <Contact />
         <Footer />
         <Rotate />
