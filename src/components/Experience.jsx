@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import SectionHeader from "./reusableCom/SectionHeader";
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -82,24 +83,7 @@ const Experience = () => {
       </div>
 
       {/* Header with animated underline */}
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 100 }}
-        viewport={{ once: true, margin: "-50px" }}
-        className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 text-center relative z-10"
-      >
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
-          03. Where I&apos;ve Worked
-        </span>
-        <motion.div
-          className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-3/4 sm:w-1/2 mx-auto"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        />
-      </motion.h2>
+      <SectionHeader number="03" title="Where I've Worked" />
 
       <div className="flex flex-col lg:flex-row gap-6 relative z-10">
         {/* Company tabs - horizontal scroll on mobile */}
@@ -109,11 +93,25 @@ const Experience = () => {
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`px-4 py-3 text-sm sm:text-base text-left border-b-2 lg:border-l-2 lg:border-b-0 border-gray-700 whitespace-nowrap transition-colors ${
-                  activeTab === index
-                    ? "border-purple-400 text-purple-400"
-                    : "text-gray-400 hover:text-gray-300 hover:border-gray-600"
-                }`}
+                className={`px-4 py-3 text-sm sm:text-base text-left border-b-2 lg:border-l-2 lg:border-b-0 whitespace-nowrap transition-colors`}
+                style={{
+                  borderColor:
+                    activeTab === index
+                      ? "var(--accent)" // active border uses theme accent
+                      : "var(--text-secondary)", // inactive border
+                  color:
+                    activeTab === index
+                      ? "var(--accent)" // active text uses theme accent
+                      : "var(--text-secondary)", // inactive text
+                }}
+                onMouseEnter={(e) => {
+                  if (activeTab !== index)
+                    e.target.style.color = "var(--accent)";
+                }}
+                onMouseLeave={(e) => {
+                  if (activeTab !== index)
+                    e.target.style.color = "var(--text-secondary)";
+                }}
               >
                 {exp.company}
               </button>
@@ -134,14 +132,20 @@ const Experience = () => {
           }}
           className="flex-1 min-w-0"
         >
-          <div className="text-gray-300">
-            <h3 className="text-lg sm:text-xl font-semibold text-white">
+          <div style={{ color: "var(--text-secondary)" }}>
+            <h3
+              className="text-lg sm:text-xl font-semibold mb-2"
+              style={{ color: "var(--text-primary)" }}
+            >
               {experiences[activeTab].role}{" "}
-              <span className="text-purple-400">
+              <span style={{ color: "var(--accent)" }}>
                 @ {experiences[activeTab].company}
               </span>
             </h3>
-            <p className="text-xs sm:text-sm text-gray-400 mb-4">
+            <p
+              style={{ color: "var(--text-secondary)" }}
+              className="text-xs sm:text-sm mb-4"
+            >
               {experiences[activeTab].period}
             </p>
 
@@ -158,10 +162,18 @@ const Experience = () => {
                   }}
                   className="flex items-start text-sm sm:text-base"
                 >
-                  <span className="text-purple-400 mr-2 mt-1 min-w-[16px]">
+                  <span
+                    className="mr-2 mt-1 min-w-[16px]"
+                    style={{ color: "var(--accent)" }}
+                  >
                     ▹
                   </span>
-                  <span className="text-xs sm:text-sm md:text-base text-gray-400">{item}</span>
+                  <span
+                    style={{ color: "var(--text-secondary)" }}
+                    className="text-xs sm:text-sm md:text-base"
+                  >
+                    {item}
+                  </span>
                 </motion.li>
               ))}
             </ul>

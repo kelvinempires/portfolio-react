@@ -12,7 +12,7 @@ import {
 import { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { motion } from "framer-motion";
+import SectionHeader from "./reusableCom/SectionHeader";
 
 const Contact = () => {
   const form = useRef();
@@ -49,24 +49,8 @@ const Contact = () => {
     >
       {/* Updated Title Section */}
       <div className="text-center mb-16">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 100 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-3xl sm:text-4xl font-bold text-white mb-4"
-        >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
-            05. Get In Touch
-          </span>
-        </motion.h2>
-        <motion.div
-          className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-1/2 mx-auto"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        />
+        <SectionHeader number="05" title="05. Get In Touch" />
+    
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-12">

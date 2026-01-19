@@ -1,13 +1,9 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faExternalLinkAlt,
-
-} from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { FaGithub } from "react-icons/fa";
 
-// Import your images
 import joel from "../assets/joel.png";
 import weather from "../assets/weather.png";
 import portfolio from "../assets/portfolio.png";
@@ -15,6 +11,7 @@ import peepPluse from "../assets/peepPluse.png";
 import ecoms from "../assets/ecoms.png";
 import chat from "../assets/chat.png";
 import peepMusic from "../assets/pmusic.png";
+import SectionHeader from "./reusableCom/SectionHeader";
 
 const portfolioItems = [
   {
@@ -83,79 +80,102 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="min-h-screen  text-white px-6 sm:px-16 md:px-24 lg:px-24"
+      className="min-h-screen px-6 sm:px-16 md:px-24"
     >
       <div className="max-w-6xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 100 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center relative z-10"
-        >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
-            04. more Made by Me
-          </span>
-          <motion.div
-            className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-1/2 mx-auto"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          />
-        </motion.h2>
+        <SectionHeader number="04.2" title="More Made by Me" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {portfolioItems.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.03, y: -5 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg hover:shadow-purple-500/20 transition-shadow duration-300"
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 180 }}
+              className="rounded-xl overflow-hidden backdrop-blur-sm"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                boxShadow: "var(--image-shadow)",
+                border: "1px solid var(--border-soft)",
+              }}
             >
-              <div className="overflow-hidden h-52">
+              {/* Image */}
+              <div className="overflow-hidden h-52 relative group">
                 <img
                   src={item.mediaSrc}
                   alt={item.title}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ backgroundColor: "var(--hover-glow)" }}
                 />
               </div>
+
+              {/* Content */}
               <div className="p-5 space-y-3">
-                <h3 className="text-xl font-semibold text-white">
+                <h3
+                  className="text-lg font-semibold"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-400">
+
+                <p
+                  className="text-xs sm:text-sm"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   {item.description}
                 </p>
 
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-2 py-1 bg-purple-800/20 text-purple-300 rounded-full border border-purple-500/20 font-mono"
+                      className="text-xs px-2 py-1 rounded font-mono"
+                      style={{
+                        backgroundColor: "var(--tag-bg)",
+                        color: "var(--text-secondary)",
+                        border: "1px solid var(--border-soft)",
+                      }}
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 mt-3">
+                {/* Links */}
+                <div className="flex items-center gap-3 pt-2">
                   <a
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm flex items-center gap-2 px-3 py-1.5 rounded-md bg-purple-600 hover:bg-purple-700 transition text-white"
+                    className="text-xs flex items-center gap-2 px-3 py-1.5 rounded-md transition"
+                    style={{
+                      backgroundColor: "var(--accent)",
+                      color: "#fff",
+                    }}
                   >
                     Live Demo <FontAwesomeIcon icon={faExternalLinkAlt} />
                   </a>
+
                   <a
                     href={item.githubCode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm flex items-center gap-2 px-3 py-1.5 rounded-md border border-gray-500 hover:border-white transition text-gray-300 hover:text-white"
+                    className="text-xs flex items-center gap-2 px-3 py-1.5 rounded-md transition"
+                    style={{
+                      border: "1px solid var(--border-soft)",
+                      color: "var(--icon-muted)",
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "var(--icon-hover)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "var(--icon-muted)")
+                    }
                   >
-                    <FaGithub />
-                    Code
+                    <FaGithub /> Code
                   </a>
                 </div>
               </div>

@@ -15,13 +15,36 @@
   --text-primary: rgb(255, 255, 255);
   --text-secondary: rgb(136, 146, 176);
 
-  --accent: rgb(128, 43, 226);
+  --accent: rgb(167 139 250);
   --particle-bg: rgba(10, 15, 30, 0.15);
   --particle-dot: rgba(180, 150, 255, 0.6);
   --particle-line: rgba(180, 150, 255, 0.15);
   --line-gradient: linear-gradient(to right, transparent, #a78bfa, transparent);
    --gradient-start: rgb(180, 150, 255);
   --gradient-end: rgb(110, 50, 207);
+    --card-bg: rgba(17, 34, 64, 0.75); /* deep navy glass */
+      /* UI surfaces */
+  --card-bg: rgba(17, 34, 64, 0.75);
+  --tag-bg: rgba(148, 163, 184, 0.12);
+
+  /* particles / background fx */
+  --particle-color: rgba(167, 139, 250, 0.2);
+
+  /* images */
+  --image-border: rgba(167, 139, 250, 0.25);
+  --image-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+
+  /* icons */
+  --icon-muted: rgb(136, 146, 176);
+  --icon-hover: var(--accent);
+
+  /* metrics / bullets */
+  --metric-text: var(--accent);
+
+  /* soft borders / glow */
+  --border-soft: rgba(167, 139, 250, 0.2);
+  --hover-glow: rgba(167, 139, 250, 0.12);
+
 }
   
 
@@ -40,6 +63,23 @@
   --line-gradient: linear-gradient(to right, transparent, #3b82f6, transparent); /* blue-500 */
  --gradient-start: rgb(99, 102, 241);
   --gradient-end: rgb(147, 197, 253);
+    --card-bg: rgba(255, 255, 255, 0.85); /* frosted white */
+      --card-bg: rgba(255, 255, 255, 0.85);
+  --tag-bg: rgba(15, 23, 42, 0.06);
+
+  --particle-color: rgba(99, 102, 241, 0.15);
+
+  --image-border: rgba(99, 102, 241, 0.25);
+  --image-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.25);
+
+  --icon-muted: #6b7280;
+  --icon-hover: var(--accent);
+
+  --metric-text: var(--accent);
+
+  --border-soft: rgba(99, 102, 241, 0.25);
+  --hover-glow: rgba(99, 102, 241, 0.12);
+
 }
 
 /* DARK THEME (Cleaner / premium dark) */
@@ -53,10 +93,26 @@
   --particle-bg: rgb(5, 5, 10, 0.25);
   --particle-dot: rgba(167, 139, 250, 0.6);
   --particle-line: rgba(167, 139, 250, 0.15);
-  --accent: rgb(167, 139, 250);
-  --line-gradient: linear-gradient(to right, transparent, #a78bfa, transparent);
+--accent: rgb(139, 92, 246); 
+--line-gradient: linear-gradient(to right, transparent, #a78bfa, transparent);
    --gradient-start: rgb(167, 139, 250);
   --gradient-end: rgb(139, 92, 246);
+      --card-bg: rgba(24, 24, 27, 0.75);
+  --tag-bg: rgba(148, 163, 184, 0.1);
+
+  --particle-color: rgba(167, 139, 250, 0.18);
+
+  --image-border: rgba(167, 139, 250, 0.25);
+  --image-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.65);
+
+  --icon-muted: rgb(156, 163, 175);
+  --icon-hover: var(--accent);
+
+  --metric-text: var(--accent);
+
+  --border-soft: rgba(167, 139, 250, 0.2);
+  --hover-glow: rgba(167, 139, 250, 0.14);
+
 }
 
 .prata-regular {
