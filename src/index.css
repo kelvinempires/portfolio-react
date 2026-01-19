@@ -60,7 +60,7 @@
   --particle-dot: rgba(18, 102, 241, 0.5);
   --particle-line: rgba(99, 102, 241, 0.12);
   --accent: rgb(105, 112, 243);
-  --line-gradient: linear-gradient(to right, transparent, #3b82f6, transparent); /* blue-500 */
+  --line-gradient: linear-gradient(to right, transparent, #6970F3, transparent); /* blue-500 */
  --gradient-start: rgb(99, 102, 241);
   --gradient-end: rgb(147, 197, 253);
     --card-bg: rgba(255, 255, 255, 0.85); /* frosted white */
