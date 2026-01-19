@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import aboutImg from "../assets/aboutImg.jpg";
 import aboutImgHover from "../assets/aboutImgHover.jpg";
 import { useMediaQuery } from "react-responsive";
+import SectionHeader from "./reusableCom/SectionHeader";
 
 const About = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -74,24 +75,7 @@ const About = () => {
       )}
 
       {/* Header with animated underline */}
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 100 }}
-        viewport={{ once: true, margin: "-50px" }}
-        className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center"
-      >
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
-          02. About Me
-        </span>
-        <motion.div
-          className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent w-1/2 mx-auto"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        />
-      </motion.h2>
+      <SectionHeader number="02" title="About Me" />
 
       <div className="flex flex-col lg:flex-row gap-12 mt-12">
         {/* Text Content */}
@@ -155,8 +139,16 @@ const About = () => {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <FaArrowRight className="text-violet-400 mr-2 text-xs" />
-                  <span>{tech}</span>
+                  <FaArrowRight
+                    className="mr-2 text-xxs "
+                    style={{ color: "var(--accent)" }}
+                  />
+                  <span
+                    className="text-xs"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {tech}
+                  </span>
                 </motion.li>
               ))}
             </motion.ul>
@@ -168,7 +160,13 @@ const About = () => {
               transition={{ delay: 0.7 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-semibold text-white mb-4">
+              <h3
+                className="text-xl font-semibold mb-4 text-transparent bg-clip-text"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(45deg, var(--gradient-start), var(--gradient-end))",
+                }}
+              >
                 Education
               </h3>
               {education.map((edu, index) => (
@@ -180,12 +178,23 @@ const About = () => {
                   transition={{ delay: 0.8 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <h4 className="text-lg text-violet-300">{edu.institution}</h4>
-                  <p className=" text-xs sm:text-sm md:text-base text-gray-400">
+                  <h4
+                    className="text-lg "
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {edu.institution}
+                  </h4>
+                  <p
+                    className=" text-xs sm:text-sm md:text-base "
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     {edu.location}
                   </p>
                   {edu.degree && (
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300 mt-1">
+                    <p
+                      className="text-xs sm:text-sm md:text-base mt-1"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
                       {edu.degree}
                     </p>
                   )}
@@ -194,7 +203,8 @@ const About = () => {
                       {edu.certifications.map((cert, i) => (
                         <motion.li
                           key={i}
-                          className="text-gray-300 text-sm"
+                          className="text-sm"
+                          style={{ color: "var(--text-secondary)" }}
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring" }}
                         >
@@ -225,13 +235,15 @@ const About = () => {
           <div className="w-full max-w-md mx-auto h-auto aspect-square relative">
             {/* Floating border */}
             <motion.div
-              className="absolute inset-0 border-2 border-violet-500 rounded-lg translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:border-violet-400 transition-all duration-300 z-0"
+              className="absolute inset-0 border-2 rounded-lg translate-x-4 translate-y-4 group-hover:translate-x-6 transition-all duration-300 z-0"
+              style={{
+                borderColor: "var(--accent)",
+              }}
               whileHover={{
                 scale: 1.02,
                 boxShadow: "0 20px 25px -5px rgba(139, 92, 246, 0.1)",
               }}
             />
-
             {/* Image container with parallax effect */}
             <motion.div
               className="relative rounded-lg overflow-hidden w-full h-full z-10 shadow-xl hover:shadow-violet-900/30 transition-all"
@@ -252,9 +264,13 @@ const About = () => {
                 className="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               />
             </motion.div>
-
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-violet-400 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-lg z-20" />
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-lg z-20"
+              style={{
+                backgroundColor: "var(--accent)",
+              }}
+            />{" "}
           </div>
         </motion.div>
       </div>

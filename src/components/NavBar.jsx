@@ -10,6 +10,7 @@ import logo from "../assets/rmv1.png";
 import { Link } from "react-scroll";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -193,8 +194,8 @@ const NavBar = () => {
             className="ml-4 px-6 py-2 rounded-md border border-[#a282f9] text-[#a282f9] text-sm font-medium flex items-center hover:bg-[rgba(100,255,218,0.1)] transition-all duration-300"
           >
             <FontAwesomeIcon icon={faPhone} className="mr-2 text-xs" />
-            Contact
           </motion.button>
+          <ThemeSwitcher />
         </div>
 
         {/* Mobile Menu Button */}

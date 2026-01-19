@@ -1,9 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@tailwind base;
-@tailwind components;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* =========================
+   THEME VARIABLES
+========================= */
+
+/* DEFAULT (my current branded dark look) */
+.theme-default {
+  --bg: rgb(10, 25, 47);
+  --nav-bg: rgb(10, 25, 47);
+
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgb(136, 146, 176);
+
+  --accent: rgb(128, 43, 226);
+  --particle-bg: rgba(10, 15, 30, 0.15);
+  --particle-dot: rgba(180, 150, 255, 0.6);
+  --particle-line: rgba(180, 150, 255, 0.15);
+  --line-gradient: linear-gradient(to right, transparent, #a78bfa, transparent);
+   --gradient-start: rgb(180, 150, 255);
+  --gradient-end: rgb(110, 50, 207);
+}
+  
+
+/* WHITE THEME */
+.theme-light {
+  --bg: rgb(245, 245, 245);
+  --nav-bg: #ffffff;
+
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+
+  --particle-bg: rgba(255, 255, 255, 0.25);
+  --particle-dot: rgba(18, 102, 241, 0.5);
+  --particle-line: rgba(99, 102, 241, 0.12);
+  --accent: rgb(105, 112, 243);
+  --line-gradient: linear-gradient(to right, transparent, #3b82f6, transparent); /* blue-500 */
+ --gradient-start: rgb(99, 102, 241);
+  --gradient-end: rgb(147, 197, 253);
+}
+
+/* DARK THEME (Cleaner / premium dark) */
+.theme-dark {
+  --bg: rgb(18, 18, 18);
+  --nav-bg: rgb(9, 9, 11);
+
+  --text-primary: rgb(229, 231, 235);
+  --text-secondary: rgb(156, 163, 175);
+
+  --particle-bg: rgb(5, 5, 10, 0.25);
+  --particle-dot: rgba(167, 139, 250, 0.6);
+  --particle-line: rgba(167, 139, 250, 0.15);
+  --accent: rgb(167, 139, 250);
+  --line-gradient: linear-gradient(to right, transparent, #a78bfa, transparent);
+   --gradient-start: rgb(167, 139, 250);
+  --gradient-end: rgb(139, 92, 246);
+}
 
 .prata-regular {
   font-family: "Prata", serif;
@@ -22,18 +76,19 @@
 }
 
 body {
-  background: rgb(10, 25, 47);
-  color: white;
+  background: var(--bg);
+  color: var(--text-primary);
   overflow: hidden;
   overflow-y: scroll;
-  font-family: "Poppins",monospace, sans-serif;
+  font-family: "Poppins", monospace, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 p {
-  color: rgb(136, 146, 176);
+  color: var(--text-secondary);
 }
 
 .NavBar {
-  background: rgb(10, 25, 47);
+  background: var(--nav-bg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -57,11 +112,10 @@ p {
   text-fill-color: transparent;
 }
 .active {
-  color: rgb(128, 43, 226);
+  color: var(--accent);
   border-bottom: 0.5rch;
   border-bottom: 3px solid rgba(111, 0, 128, 0.498);
 }
-
 
 @keyframes typing {
   from {
@@ -73,7 +127,8 @@ p {
 }
 
 @keyframes blink-caret {
-  from, to {
+  from,
+  to {
     border-color: transparent;
   }
   50% {
@@ -87,4 +142,3 @@ p {
   overflow: hidden;
   border-right: 3px solid; /* Creates the blinking cursor */
 }
-

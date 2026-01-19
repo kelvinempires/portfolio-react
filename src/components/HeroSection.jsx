@@ -94,11 +94,11 @@ const HeroSection = () => {
           <motion.div variants={item} className="flex items-center gap-2 mb-1">
             <div
               className="w-8 md:w-12 h-[2px] mb-2"
-              style={{ backgroundColor: colors.text.secondary }}
+              style={{ backgroundColor: "var(--text-secondary)" }}
             ></div>
             <p
               className="font-medium md:text-base pb-2"
-              style={{ color: colors.text.secondary }}
+              style={{ color: "var(--text-secondary)" }}
             >
               Hello
             </p>
@@ -108,9 +108,12 @@ const HeroSection = () => {
           <motion.div variants={floating} animate="animate" className="mb-4">
             <h1
               className="text-4xl sm:text-6xl md:text-7xl font-bold"
-              style={{ color: colors.text.primary }}
+              style={{ color: "var(--primary)" }}
             >
-              <span className="prata-regular" style={{ color: colors.primary }}>
+              <span
+                className="prata-regular"
+                style={{ color: "var(--text-primary)" }}
+              >
                 I&apos;m{" "}
               </span>
               <span className="prata-regular">Kelvin Ewurum</span>
@@ -119,16 +122,16 @@ const HeroSection = () => {
             <div className="flex flex-wrap items-baseline mt-2">
               <h2
                 className="prata-regular text-3xl sm:text-5xl mr-2"
-                style={{ color: colors.primary }}
+                style={{ color: "var(--text-primary)" }}
               >
                 {isMobile ? "Dev," : "Developer,"}
               </h2>
               <div
                 className="font-playfair text-2xl sm:text-5xl min-w-[200px]"
-                style={{ color: colors.text.primary }}
+                style={{ color: "var(--text-primary)" }}
               >
                 {text}
-                <Cursor cursorColor={colors.primary} cursorStyle="|" />
+                <Cursor cursorColor="var(--primary)" cursorStyle="|" />
               </div>
             </div>
           </motion.div>
@@ -137,7 +140,7 @@ const HeroSection = () => {
           <motion.div
             variants={item}
             className="max-w-2xl mt-6 mb-8"
-            style={{ color: colors.text.secondary }}
+            style={{ color: "var(--text-secondary)" }}
           >
             <p className="text-xs sm:text-sm md:text-base leading-relaxed">
               I build exceptional digital experiences with modern web
@@ -165,10 +168,11 @@ const HeroSection = () => {
                 boxShadow: `0 0 15px ${colors.primary}80`,
               }}
               whileTap={{ scale: 0.98 }}
-              className="mt-4 py-3 px-8 rounded-full font-medium relative overflow-hidden group"
+              className="mt-4 py-3 px-8 rounded-full font-medium  relative overflow-hidden group"
               style={{
-                background: `linear-gradient(45deg, ${colors.secondary}, ${colors.primary})`,
-                color: colors.text.primary,
+                background:
+                  "linear-gradient(45deg, var(--secondary), var(--primary))",
+                color: "var(--text-primary)",
               }}
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -188,7 +192,7 @@ const HeroSection = () => {
           <>
             <motion.div
               className="absolute right-20 top-1/4 w-3 h-3 rounded-full pointer-events-none"
-              style={{ backgroundColor: colors.primary, opacity: 0.2 }}
+              style={{ backgroundColor: "var(--primary)", opacity: 0.2 }}
               animate={{
                 y: [0, -25, 0],
                 x: [0, 15, 0],
@@ -201,7 +205,7 @@ const HeroSection = () => {
             />
             <motion.div
               className="absolute left-10 top-1/3 w-2 h-2 rounded-full pointer-events-none"
-              style={{ backgroundColor: colors.accent, opacity: 0.15 }}
+              style={{ backgroundColor: "var(--accent)", opacity: 0.15 }}
               animate={{
                 y: [0, -20, 0],
                 x: [0, -8, 0],
