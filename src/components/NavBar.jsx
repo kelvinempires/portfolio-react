@@ -51,7 +51,7 @@ const NavBar = () => {
     { id: "home", label: "Home", offset: -100 },
     { id: "about", label: "About", offset: -80 },
     { id: "experience", label: "Work", offset: -80 },
-    { id: "projects", label: "projects", offset: -80 },
+    { id: "projects", label: "Projects", offset: -80 },
   ];
 
   const mobileItems = [
@@ -100,12 +100,15 @@ const NavBar = () => {
       initial={{ y: 0 }}
       animate={{ y: visible ? 0 : -100 }}
       transition={{ type: "spring", damping: 25, stiffness: 500 }}
-      className={`fixed w-full z-50 h-20 ${
-        scrolled ? "bg-[rgb(10,25,47)] shadow-lg" : "bg-[rgba(10,25,47,0.9)]"
-      } backdrop-blur-md transition-all duration-300 border-b border-[rgba(100,255,219,0.01)]`}
+      className={`fixed w-full z-50 h-20 backdrop-blur-md transition-all duration-300 border-b border-[var(--border-light)]`}
+      style={{
+        background: scrolled
+          ? "var(--nav-bg)"
+          : "rgba(var(--bg-rgb),0.9)", // optional for transparency if you define --bg-rgb: 10,25,47;
+      }}
     >
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-        {/* Logo with elegant animation */}
+        {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -123,13 +126,13 @@ const NavBar = () => {
               alt="Logo"
               className="h-12 w-auto transition-all duration-300 hover:opacity-90"
             />
-            <span className="text-transparent text-xl  hover:cursor-pointer bg-clip-text bg-gradient-to-r from-violet-400 to-violet-600">
+            <span className="text-transparent text-xl hover:cursor-pointer bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)]">
               _elvin Ewurum
             </span>
           </Link>
         </motion.div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-1">
           {navItems.map((item) => (
             <motion.div
@@ -146,23 +149,15 @@ const NavBar = () => {
                 duration={800}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 ${
                   activeLink === item.id
-                    ? "text-[#a282f9]"
-                    : "text-[#ccd6f6] hover:text-[#a282f9] hover:cursor-pointer"
+                    ? "text-[var(--accent)]"
+                    : "text-[var(--text-secondary)] hover:text-[var(--accent)] hover:cursor-pointer"
                 }`}
                 onClick={() => setActiveLink(item.id)}
               >
-                <span className="text-[#a282f9] mr-1">
+                <span className="text-[var(--accent)] mr-1">
                   0{navItems.indexOf(item) + 1}.
                 </span>
                 {item.label}
-                {/* {activeLink === item.id && (
-                  <motion.span
-                    layoutId="activeIndicator"
-                    className="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#a282f9] rounded-full"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 150, damping: 30,  }}
-                  />
-                )} */}
               </Link>
             </motion.div>
           ))}
@@ -174,7 +169,7 @@ const NavBar = () => {
             rel="noopener noreferrer"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center px-4 py-2 text-sm font-medium text-[#ccd6f6] hover:text-[#a282f9] transition-colors duration-300"
+            className="flex items-center px-4 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors duration-300"
           >
             Resume
             <FontAwesomeIcon icon={faDownload} className="ml-2 text-xs" />
@@ -182,7 +177,10 @@ const NavBar = () => {
 
           {/* Contact Button */}
           <motion.button
-            whileHover={{ y: -2, backgroundColor: "rgba(100, 255, 218, 0.1)" }}
+            whileHover={{
+              y: -2,
+              backgroundColor: "var(--border-light)",
+            }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400 }}
             onClick={() => {
@@ -191,10 +189,11 @@ const NavBar = () => {
                 .scrollIntoView({ behavior: "smooth" });
               setActiveLink("contact");
             }}
-            className="ml-4 px-6 py-2 rounded-md border border-[#a282f9] text-[#a282f9] text-sm font-medium flex items-center hover:bg-[rgba(100,255,218,0.1)] transition-all duration-300"
+            className="ml-4 px-6 py-2 rounded-md border border-[var(--accent)] text-[var(--accent)] text-sm font-medium flex items-center hover:bg-[var(--border-light)] transition-all duration-300"
           >
             <FontAwesomeIcon icon={faPhone} className="mr-2 text-xs" />
           </motion.button>
+
           <ThemeSwitcher />
         </div>
 
@@ -202,14 +201,16 @@ const NavBar = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="md:hidden p-2 text-[#ccd6f6] rounded-md focus:outline-none"
+          className="md:hidden p-2 text-[var(--text-secondary)] rounded-md focus:outline-none"
           onClick={() => setShowMenu(!showMenu)}
           aria-label="Toggle menu"
         >
+          <div className="flex items-center justify-between gap-2"> <ThemeSwitcher />
           <FontAwesomeIcon
             icon={showMenu ? faTimes : faBars}
             className="text-xl"
-          />
+          /></div>
+         
         </motion.button>
       </div>
 
@@ -221,7 +222,7 @@ const NavBar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-20 left-0 right-0 bg-[rgb(10,25,47)] shadow-xl border-t border-[rgba(185,100,255,0.08)]"
+            className="md:hidden absolute top-20 left-0 right-0 bg-[var(--nav-bg)] shadow-xl border-t border-[var(--border-light)]"
           >
             <motion.div
               variants={containerVariants}
@@ -235,17 +236,17 @@ const NavBar = () => {
                   variants={itemVariants}
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-b border-[rgba(185,100,255,0.08)] last:border-0"
+                  className="border-b border-[var(--border-light)] last:border-0"
                 >
                   {item.external ? (
                     <a
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block py-4 text-[#ccd6f6] hover:text-[#a282f9] font-medium flex items-center"
+                      className="block py-4 text-[var(--text-secondary)] hover:text-[var(--accent)] font-medium flex items-center"
                       onClick={() => setShowMenu(false)}
                     >
-                      <span className="text-[#a282f9] mr-2">
+                      <span className="text-[var(--accent)] mr-2">
                         0{mobileItems.indexOf(item) + 1}.
                       </span>
                       {item.label}
@@ -262,13 +263,13 @@ const NavBar = () => {
                       smooth={true}
                       offset={item.offset}
                       duration={800}
-                      className="block py-4 text-[#ccd6f6] hover:text-[#a282f9] font-medium"
+                      className="block py-4 text-[var(--text-secondary)] hover:text-[var(--accent)] font-medium"
                       onClick={() => {
                         setActiveLink(item.id);
                         setShowMenu(false);
                       }}
                     >
-                      <span className="text-[#a282f9] mr-2">
+                      <span className="text-[var(--accent)] mr-2">
                         0{mobileItems.indexOf(item) + 1}.
                       </span>
                       {item.label}
@@ -278,6 +279,7 @@ const NavBar = () => {
               ))}
 
               {/* Social Links */}
+              
               <div className="flex space-x-4 pt-6">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -285,8 +287,8 @@ const NavBar = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ y: -3, color: "#64ffda" }}
-                    className="text-[#ccd6f6] text-xl"
+                    whileHover={{ y: -3, color: "var(--accent)" }}
+                    className="text-[var(--text-secondary)] text-xl"
                   >
                     <FontAwesomeIcon icon={social.icon} />
                   </motion.a>

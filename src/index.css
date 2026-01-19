@@ -44,6 +44,9 @@
   /* soft borders / glow */
   --border-soft: rgba(167, 139, 250, 0.2);
   --hover-glow: rgba(167, 139, 250, 0.12);
+   --bg-rgb: 10, 25, 47;
+  --accent-hover: rgba(167, 139, 250, 0.8);
+  --border-light: rgba(167, 139, 250, 0.2);
 
 }
   
@@ -79,6 +82,9 @@
 
   --border-soft: rgba(99, 102, 241, 0.25);
   --hover-glow: rgba(99, 102, 241, 0.12);
+    --bg-rgb: 245, 245, 245;
+  --accent-hover: rgba(105, 112, 243, 0.8);
+  --border-light: rgba(99, 102, 241, 0.25);
 
 }
 
@@ -112,6 +118,9 @@
 
   --border-soft: rgba(167, 139, 250, 0.2);
   --hover-glow: rgba(167, 139, 250, 0.14);
+    --bg-rgb: 18, 18, 18;
+  --accent-hover: rgba(139, 92, 246, 0.8);
+  --border-light: rgba(167, 139, 250, 0.14);
 
 }
 
