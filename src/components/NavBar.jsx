@@ -127,7 +127,7 @@ const NavBar = () => {
             <span className="text-transparent text-xl hover:cursor-pointer bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)]">
               _elvin
             </span>
-            <span className="text-transparent text-xl hover:cursor-pointer bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)] display-name hidden sm:inline">
+            <span className="text-transparent text-xl hover:cursor-pointer bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)] display-name hidden sm:inline ">
               _Ewurum
             </span>
           </Link>
