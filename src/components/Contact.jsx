@@ -154,7 +154,7 @@ const Contact = () => {
             className="prata-regular text-xs sm:text-sm md:text-base font-semibold mt-4 mb-6"
             style={{ color: "var(--text-secondary)" }}
           >
-            Would love to hear from you
+            Would love to hear from you!
           </h3>
 
           <div className="social-icons flex space-x-4">
