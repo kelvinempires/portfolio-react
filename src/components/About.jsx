@@ -1,7 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
-import aboutImg from "../assets/aboutImg.jpg";
-import aboutImgHover from "../assets/aboutImgHover.jpg";
+import aboutImg from "../assets/AboutImage.jpg";
+import aboutImgHover from "../assets/AboutImageHover.jpg";
 import { useMediaQuery } from "react-responsive";
 import SectionHeader from "./reusableCom/SectionHeader";
 
